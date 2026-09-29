@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Events Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sidebar-width: 280px;
+            --header-height: 80px;
+            --primary-navy: #0B111E;
+            --accent-gold: #c59b6d;
+            --accent-hover: #b0895c;
+            --gradient-gold: linear-gradient(135deg, #e3c08f, #c59b6d);
+        }
+
+        body {
+            background-color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        /* Sidebar Styling */
+        .dash-sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--primary-navy);
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 1050;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-header {
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(0,0,0,0.2);
+        }
+
+        .sidebar-nav {
+            flex-grow: 1;
+            padding: 24px 16px;
+            overflow-y: auto;
+        }
+
+        .nav-item-dash {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            color: #94a3b8;
+            text-decoration: none;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item-dash .material-symbols-outlined {
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .nav-section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #64748b;
+            font-weight: 800;
+            margin: 24px 0 12px 16px;
+        }
+
+        .nav-item-dash:hover,
+        .nav-item-dash.active {
+            background: rgba(197, 155, 109, 0.15);
+            color: var(--accent-gold);
+            transform: translateX(5px);
+        }
+
+        /* Main Content */
+        .dash-main {
+            margin-left: var(--sidebar-width);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        /* Header Styling */
+        .dash-header {
+            height: var(--header-height);
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .user-avatar {
+            flex-shrink: 0; 
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--gradient-gold);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(197, 155, 109, 0.3);
+        }
+
+        #dashFrame {
+            flex-grow: 1;
+            width: 100%;
+            border: none;
+            background: transparent;
+        }
+
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(11, 17, 30, 0.8);
+            backdrop-filter: blur(4px);
+            z-index: 1040;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 991.98px) {
+            .dash-sidebar {
+                transform: translateX(-100%);
+            }
+            .dash-sidebar.active {
+                transform: translateX(0);
+            }
+            .dash-main {
+                margin-left: 0;
+            }
+            .dash-header {
+                padding: 0 1rem;
+            }
+        }
+    
+        /* Theme Custom Utilities */
+        .text-theme { color: var(--accent-gold) !important; }
+        .border-theme { border-color: var(--accent-gold) !important; }
+        .bg-theme-light { background-color: rgba(197, 155, 109, 0.1) !important; }
+        
+        .btn-theme-outline {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        .btn-theme-outline:hover {
+            color: #ffffff;
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Animated Abstract Background for Dashboard Shell -->
+    <div class="position-fixed top-0 start-0 w-100 h-100 pointer-none"
+        style="background: radial-gradient(circle at top right, rgba(197, 155, 109, 0.08) 0%, transparent 40%), radial-gradient(circle at bottom left, rgba(11, 17, 30, 0.05) 0%, transparent 40%); z-index: -2;">
+    </div>
+
+    <!-- Sidebar -->
+    <div class="dash-sidebar" id="dashSidebar">
+        <div class="sidebar-header">
+            <div style="-webkit-mask: url('assets/images/logoStackly.webp') no-repeat center center; -webkit-mask-size: contain; mask: url('assets/images/logoStackly.webp') no-repeat center center; mask-size: contain; background: #ffffff; width: 150px; height: 45px;" aria-label="Stackly Logo"></div>
+        </div>
+        <div class="sidebar-nav"> 
+            
+            <!-- Customer Navigation (5 Pages) -->
+            <div id="navCustomer" style="display:none">
+                <p class="nav-section-title">My Dashboard</p>
+                <a class="nav-item-dash active" data-page="customer_overview" href="dashboard/customer_overview.html">
+                    <span class="material-symbols-outlined">dashboard</span> Overview
+                </a>
+                <a class="nav-item-dash" data-page="customer_events" href="dashboard/customer_events.html">
+                    <span class="material-symbols-outlined">celebration</span> My Events
+                </a>
+                <a class="nav-item-dash" data-page="customer_bookings" href="dashboard/customer_bookings.html">
+                    <span class="material-symbols-outlined">calendar_month</span> Bookings
+                </a>
+                <a class="nav-item-dash" data-page="customer_invoices" href="dashboard/customer_invoices.html">
+                    <span class="material-symbols-outlined">receipt_long</span> Invoices
+                </a>
+                <a class="nav-item-dash" data-page="customer_settings" href="dashboard/customer_settings.html">
+                    <span class="material-symbols-outlined">manage_accounts</span> Profile Settings
+                </a>
+            </div>
+
+            <!-- Planner Navigation (5 Pages) -->
+            <div id="navPlanner" style="display:none">
+                <p class="nav-section-title">Planner Workspace</p>
+                <a class="nav-item-dash active" data-page="planner_overview" href="dashboard/planner_overview.html">
+                    <span class="material-symbols-outlined">dashboard</span> Overview
+                </a>
+                <a class="nav-item-dash" data-page="planner_projects" href="dashboard/planner_projects.html">
+                    <span class="material-symbols-outlined">assignment</span> Active Projects
+                </a>
+                <a class="nav-item-dash" data-page="planner_vendors" href="dashboard/planner_vendors.html">
+                    <span class="material-symbols-outlined">storefront</span> Vendor Network
+                </a>
+                <a class="nav-item-dash" data-page="planner_finances" href="dashboard/planner_finances.html">
+                    <span class="material-symbols-outlined">account_balance_wallet</span> Finances
+                </a>
+                <a class="nav-item-dash" data-page="planner_messages" href="dashboard/planner_messages.html">
+                    <span class="material-symbols-outlined">forum</span> Client Messages
+                </a>
+            </div>
+
+            <!-- Vendor Navigation (5 Pages) -->
+            <div id="navVendor" style="display:none">
+                <p class="nav-section-title">Vendor Hub</p>
+                <a class="nav-item-dash active" data-page="vendor_overview" href="dashboard/vendor_overview.html">
+                    <span class="material-symbols-outlined">dashboard</span> Overview
+                </a>
+                <a class="nav-item-dash" data-page="vendor_services" href="dashboard/vendor_services.html">
+                    <span class="material-symbols-outlined">inventory_2</span> Service Listings
+                </a>
+                <a class="nav-item-dash" data-page="vendor_calendar" href="dashboard/vendor_calendar.html">
+                    <span class="material-symbols-outlined">edit_calendar</span> Availability
+                </a>
+                <a class="nav-item-dash" data-page="vendor_payments" href="dashboard/vendor_payments.html">
+                    <span class="material-symbols-outlined">payments</span> Payments
+                </a>
+                <a class="nav-item-dash" data-page="vendor_profile" href="dashboard/vendor_profile.html">
+                    <span class="material-symbols-outlined">store</span> Business Profile
+                </a>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="dash-main">
+        <header class="dash-header">
+            <div class="d-flex align-items-center gap-3"> 
+                <button class="btn border p-2 d-flex align-items-center justify-content-center shadow-sm d-lg-none"
+                    id="sidebarToggle" style="border-radius: 8px; background: #fff;"> 
+                    <span class="material-symbols-outlined text-dark">menu</span> 
+                </button>
+                <div class="d-flex flex-column d-none d-sm-flex">
+                    <h5 class="mb-0 fw-bold text-dark" style="letter-spacing: -0.5px;">Events Planner</h5> 
+                    <span class="badge mt-1 fw-bold text-uppercase border border-theme text-theme bg-theme-light" id="roleBadge"
+                        style="width: fit-content; letter-spacing: 1px;">ROLE</span>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-3 gap-md-4">
+                <div class="text-end d-none d-md-block">
+                    <div class="fw-bold text-dark" id="navUserName">User Name</div>
+                    <div class="small text-muted" id="navUserEmail">email@example.com</div>
+                </div>
+                <div class="d-flex align-items-center gap-3 border-start ps-3">
+                    <div class="user-avatar text-white" id="userAvatar">U</div> 
+                    <button onclick="window.top.location.href='index.html'"
+                        class="btn btn-theme-outline rounded-pill px-3 py-2 fw-bold d-flex align-items-center gap-2 shadow-sm transition-all"
+                        id="signoutBtn" style="font-size: 0.85rem;"> 
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem;">logout</span> 
+                        <span class="d-none d-md-inline">Sign Out</span>
+                    </button>
+                </div>
+            </div>
+        </header> 
+        
+        <!-- Dashboard Content Iframe --> 
+        <iframe id="dashFrame" src="about:blank"></iframe>
+    </div>
+    
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>
