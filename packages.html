@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages - Events Planner</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header will be injected here via JS -->
+    <header id="site-header" class="site-header"></header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="position-relative d-flex align-items-center" style="min-height: 90vh; background: linear-gradient(90deg, rgba(14, 11, 8, 0.94) 0%, rgba(14, 11, 8, 0.78) 50%, rgba(14, 11, 8, 0.45) 100%), url('./assets/images/packages-banner.webp') center/cover;">
+            <div class="container position-relative z-1">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 text-white" data-aos="fade-up">
+                        <span class="text-uppercase fw-bold d-block mb-3" style="color: #b58349; letter-spacing: 2px; font-size: 0.75rem;">OUR PACKAGES</span>
+                        <h1 class="fw-bold mb-4 text-white" style="font-family: var(--font-heading); line-height: 1.2; font-size: clamp(2.4rem, 8vw, 4.2rem);">
+                            Choose The <br class="d-block d-md-none">Perfect <br class="d-none d-md-block">
+                            <span style="color: #b58349; font-weight: 400; font-style: italic;">Package</span> For <br class="d-block d-md-none">Your Event
+                        </h1>
+                        <p class="mb-5 pe-md-5" style="font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.85); max-width: 550px;">
+                            Every celebration is unique, and so are our packages. We offer flexible and customizable event packages to match your vision, budget and style.
+                        </p>
+                        <div class="d-flex flex-column flex-sm-row gap-3 align-items-start">
+                            <a href="#pricing" class="btn rounded-pill px-4 py-2 fw-medium d-inline-flex align-items-center justify-content-center" style="background-color: #b58349; color: #fff; border: none; font-size: 0.9rem;">
+                                Get Started &nbsp;<i class="fa-solid fa-arrow-right" style="font-size: 0.8rem;"></i>
+                            </a>
+                            <a href="#process" class="btn rounded-pill px-4 py-2 fw-medium bg-transparent text-white text-center" style="border: 1px solid rgba(255,255,255,0.4); font-size: 0.9rem;">
+                                Explore Our Process
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-end d-none d-lg-block" data-aos="fade-left" data-aos-delay="200">
+                        <div class="d-inline-block text-center" style="font-family: 'Great Vibes', cursive; color: #e8d0a9; font-size: 2.8rem; line-height: 1.3; transform: rotate(-6deg); text-shadow: 2px 2px 6px rgba(0,0,0,0.5);">
+                            Your Vision<br>Our Planning<br>Perfect Event <i class="fa-regular fa-heart ms-1" style="font-size: 1.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-5" style="background: #07101C;">
+            <div class="container">
+                <div class="row text-center text-white g-4 justify-content-center align-items-center">
+                    <!-- Stat 1 -->
+                    <div class="col-sm-6 col-lg-3 position-relative" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="fw-bold mb-1" style="font-family: var(--font-heading); color: #b58349; font-size: clamp(2.5rem, 3.5vw, 3rem);">500<sup style="font-size: 0.5em;">+</sup></h3>
+                        <span class="d-block" style="font-size: 0.7rem; letter-spacing: 1.5px; color: rgba(255,255,255,0.7); font-weight: 500; text-transform: uppercase;">Events Celebrated</span>
+                        <!-- Desktop Divider -->
+                        <div class="d-none d-lg-block position-absolute end-0 top-50 translate-middle-y" style="width: 1px; height: 60%; background-color: rgba(181, 131, 73, 0.2);"></div>
+                    </div>
+                    
+                    <!-- Stat 2 -->
+                    <div class="col-sm-6 col-lg-3 position-relative" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="fw-bold mb-1" style="font-family: var(--font-heading); color: #b58349; font-size: clamp(2.5rem, 3.5vw, 3rem);">99<sup style="font-size: 0.5em;">%</sup></h3>
+                        <span class="d-block" style="font-size: 0.7rem; letter-spacing: 1.5px; color: rgba(255,255,255,0.7); font-weight: 500; text-transform: uppercase;">5-Star Client Ratings</span>
+                        <!-- Desktop Divider -->
+                        <div class="d-none d-lg-block position-absolute end-0 top-50 translate-middle-y" style="width: 1px; height: 60%; background-color: rgba(181, 131, 73, 0.2);"></div>
+                    </div>
+                    
+                    <!-- Stat 3 -->
+                    <div class="col-sm-6 col-lg-3 position-relative" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="fw-bold mb-1" style="font-family: var(--font-heading); color: #b58349; font-size: clamp(2.5rem, 3.5vw, 3rem);">12<sup style="font-size: 0.5em;">+</sup> Years</h3>
+                        <span class="d-block" style="font-size: 0.7rem; letter-spacing: 1.5px; color: rgba(255,255,255,0.7); font-weight: 500; text-transform: uppercase;">Industry Experience</span>
+                        <!-- Desktop Divider -->
+                        <div class="d-none d-lg-block position-absolute end-0 top-50 translate-middle-y" style="width: 1px; height: 60%; background-color: rgba(181, 131, 73, 0.2);"></div>
+                    </div>
+                    
+                    <!-- Stat 4 -->
+                    <div class="col-sm-6 col-lg-3 position-relative" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="fw-bold mb-1" style="font-family: var(--font-heading); color: #b58349; font-size: clamp(2.5rem, 3.5vw, 3rem);">40<sup style="font-size: 0.5em;">+</sup></h3>
+                        <span class="d-block" style="font-size: 0.7rem; letter-spacing: 1.5px; color: rgba(255,255,255,0.7); font-weight: 500; text-transform: uppercase;">Trusted Vendor Partners</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Cards Section -->
+        <section class="py-5" style="background-color: #faf8f5;">
+            <div class="container">
+                <div class="text-center mb-5 ">
+                    <span class="text-uppercase fw-bold d-block mb-3" style="color: #b58349; letter-spacing: 2px; font-size: 0.75rem;" data-aos="fade-up">OUR PACKAGES</span>
+                    <h2 class=" fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color);" data-aos="fade-up" data-aos-delay="100">Simple, Transparent Pricing</h2>
+                    <p class="text-secondary mx-auto" style="max-width: 550px; font-size: 0.95rem; line-height: 1.6;" data-aos="fade-up" data-aos-delay="200">We believe in clear and honest pricing. Choose the package that fits your needs and let us handle the rest.</p>
+                </div>
+
+                <div class="row g-4 align-items-start justify-content-center">
+                    <!-- Basic Card -->
+                    <div class="col-lg-4 col-md-8" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card border-0 rounded-4 shadow-sm bg-white overflow-hidden position-relative p-0">
+                            <div class="position-absolute top-0 start-0 m-3 z-1">
+                                <span class="badge rounded-1 px-3 py-2 fw-bold" style="background-color: #b58349; color: #fff; font-size: 0.65rem; letter-spacing: 1px;">MOST POPULAR</span>
+                            </div>
+                            <img src="./assets/images/img_75.webp" class="card-img-top" alt="Basic Package" style="height: 200px; object-fit: cover;">
+                            <div class="card-body p-4 p-xl-5 d-flex flex-column">
+                                <h4 class="fw-bold mb-2" style="font-family: var(--font-heading); color: var(--secondary-color);">Basic Package</h4>
+                                <p class="text-secondary mb-4" style="font-size: 0.85rem;">Perfect for intimate gatherings and small celebrations.</p>
+                                <div class="mb-4">
+                                    <span class="fs-1 fw-bold" style="color: #b58349; font-family: var(--font-heading);">$499</span>
+                                    <span class="text-secondary" style="font-size: 0.75rem;">/event</span>
+                                </div>
+                                <hr style="border-top: 1px solid #eaeaea; margin-bottom: 1.8rem; opacity: 1;">
+                                <ul class="list-unstyled mb-5 flex-grow-1">
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Event Planning & Coordination</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Basic Venue Decoration</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Catering (Standard Menu)</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Photography (4 Hours)</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Guest Management</span></li>
+                                </ul>
+                                <a href="contact.html" class="btn w-100 rounded-2 py-2 fw-medium mt-auto" style="border: 1px solid #b58349; color: #b58349; font-size: 0.85rem;">
+                                    Choose This Package &nbsp;<i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Premium Card -->
+                    <div class="col-lg-4 col-md-8" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card border-0 rounded-4 bg-white overflow-hidden position-relative p-0 z-2 shadow" style="border: 2px solid #b58349 !important;">
+                            <div class="position-absolute top-0 start-0 m-3 z-1">
+                                <span class="badge rounded-1 px-3 py-2 fw-bold" style="background-color: #b58349; color: #fff; font-size: 0.65rem; letter-spacing: 1px;">BEST VALUE</span>
+                            </div>
+                            <img src="./assets/images/img_76.webp" class="card-img-top" alt="Premium Package" style="height: 200px; object-fit: cover;">
+                            <div class="card-body p-4 p-xl-5 d-flex flex-column">
+                                <h4 class="fw-bold mb-2" style="font-family: var(--font-heading); color: var(--secondary-color);">Premium Package</h4>
+                                <p class="text-secondary mb-4" style="font-size: 0.85rem;">Ideal for mid-sized events with more style and comfort.</p>
+                                <div class="mb-4">
+                                    <span class="fs-1 fw-bold" style="color: #b58349; font-family: var(--font-heading);">$1,299</span>
+                                    <span class="text-secondary" style="font-size: 0.75rem;">/event</span>
+                                </div>
+                                <hr style="border-top: 1px solid #eaeaea; margin-bottom: 1.8rem; opacity: 1;">
+                                <ul class="list-unstyled mb-5 flex-grow-1">
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Complete Event Planning</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Elegant Venue Decoration</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Catering (Premium Menu)</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Photography & Videography (8 Hours)</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Entertainment (DJ / Live Music)</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Guest Management</span></li>
+                                </ul>
+                                <a href="contact.html" class="btn w-100 rounded-2 py-3 fw-medium mt-auto text-white" style="background-color: #b58349; font-size: 0.85rem;">
+                                    Choose This Package &nbsp;<i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Luxury Card -->
+                    <div class="col-lg-4 col-md-8" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card border-0 rounded-4 shadow-sm bg-white overflow-hidden position-relative p-0">
+                            <div class="position-absolute top-0 start-0 m-3 z-1">
+                                <span class="badge rounded-1 px-3 py-2 fw-bold" style="background-color: #b58349; color: #fff; font-size: 0.65rem; letter-spacing: 1px;">LUXURY</span>
+                            </div>
+                            <img src="./assets/images/img_77.webp" class="card-img-top" alt="Luxury Package" style="height: 200px; object-fit: cover;">
+                            <div class="card-body p-4 p-xl-5 d-flex flex-column">
+                                <h4 class="fw-bold mb-2" style="font-family: var(--font-heading); color: var(--secondary-color);">Luxury Package</h4>
+                                <p class="text-secondary mb-4" style="font-size: 0.85rem;">For grand celebrations and unforgettable experiences.</p>
+                                <div class="mb-4">
+                                    <span class="fs-1 fw-bold" style="color: #b58349; font-family: var(--font-heading);">$2,499</span>
+                                    <span class="text-secondary" style="font-size: 0.75rem;">/event</span>
+                                </div>
+                                <hr style="border-top: 1px solid #eaeaea; margin-bottom: 1.8rem; opacity: 1;">
+                                <ul class="list-unstyled mb-5 flex-grow-1">
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Full Event Planning & Design</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Premium Venue Decoration</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Catering (Gourmet Menu)</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Photography & Videography (Full Day)</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">Entertainment (Live Band / DJ + More)</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">VIP Guest Management</span></li>
+                                    <li class="mb-3 d-flex align-items-start"><i class="fa-regular fa-circle-check mt-1 me-3" style="color: #b58349; font-size: 0.9rem;"></i><span class="text-secondary" style="font-size: 0.85rem;">On-Site Event Coordinator</span></li>
+                                </ul>
+                                <a href="contact.html" class="btn w-100 rounded-2 py-2 fw-medium mt-auto" style="border: 1px solid #b58349; color: #b58349; font-size: 0.85rem;">
+                                    Choose This Package &nbsp;<i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="py-5 bg-white">
+            <div class="container ">
+                <div class="text-center mb-5 ">
+                    <span class="text-uppercase fw-bold d-block mb-3" style="color: #b58349; letter-spacing: 2px; font-size: 0.75rem;" data-aos="fade-up">SIMPLE & SEAMLESS</span>
+                    <h2 class=" fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color);" data-aos="fade-up" data-aos-delay="100">How We Bring Your Dream Event to Life</h2>
+                    <p class="text-secondary mx-auto" style="max-width: 650px; font-size: 0.95rem; line-height: 1.6;" data-aos="fade-up" data-aos-delay="200">Our step-by-step bespoke process removes every trace of stress, transforming creative inspiration<br class="d-none d-md-block"> into an unforgettable celebration.</p>
+                </div>
+                <div class="row g-4">
+                    <!-- Process 1 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card h-100 border-0 rounded-4 shadow-sm bg-white p-4 p-xl-4 position-relative overflow-hidden" style="border: 1px solid #f9f9f9 !important;">
+                            <div class="d-flex justify-content-between align-items-center mb-4 pb-2">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background-color: #fbf8f3; color: #b58349; border: 1px solid rgba(181, 131, 73, 0.2);">
+                                    <i class="fa-regular fa-comment-dots" style="font-size: 1.2rem;"></i>
+                                </div>
+                                <div style="font-family: var(--font-heading); color: #d6b88b; font-size: 1.6rem; font-weight: 600;">01</div>
+                            </div>
+                            <h5 class="fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color); font-size: 1.15rem; line-height: 1.4;">Consultation & Vision<br>Discovery</h5>
+                            <p class="text-secondary mb-0" style="font-size: 0.8rem; line-height: 1.8;">We begin with an in-depth conversation exploring your personal aesthetics, guest profile, favorite themes, and key celebration milestones.</p>
+                        </div>
+                    </div>
+                    <!-- Process 2 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card h-100 border-0 rounded-4 shadow-sm bg-white p-4 p-xl-4 position-relative overflow-hidden" style="border: 1px solid #f9f9f9 !important;">
+                            <div class="d-flex justify-content-between align-items-center mb-4 pb-2">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background-color: #fbf8f3; color: #b58349; border: 1px solid rgba(181, 131, 73, 0.2);">
+                                    <i class="fa-regular fa-file-lines" style="font-size: 1.2rem;"></i>
+                                </div>
+                                <div style="font-family: var(--font-heading); color: #d6b88b; font-size: 1.6rem; font-weight: 600;">02</div>
+                            </div>
+                            <h5 class="fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color); font-size: 1.15rem; line-height: 1.4;">Custom Curation &<br>Proposal</h5>
+                            <p class="text-secondary mb-0" style="font-size: 0.8rem; line-height: 1.8;">Our planners construct tailored design moodboards, vendor shortlists, floral palettes, and an itemized transparent budget blueprint.</p>
+                        </div>
+                    </div>
+                    <!-- Process 3 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card h-100 border-0 rounded-4 shadow-sm bg-white p-4 p-xl-4 position-relative overflow-hidden" style="border: 1px solid #f9f9f9 !important;">
+                            <div class="d-flex justify-content-between align-items-center mb-4 pb-2">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background-color: #fbf8f3; color: #b58349; border: 1px solid rgba(181, 131, 73, 0.2);">
+                                    <i class="fa-regular fa-pen-to-square" style="font-size: 1.2rem;"></i>
+                                </div>
+                                <div style="font-family: var(--font-heading); color: #d6b88b; font-size: 1.6rem; font-weight: 600;">03</div>
+                            </div>
+                            <h5 class="fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color); font-size: 1.15rem; line-height: 1.4;">Coordination & Flawless<br>Setup</h5>
+                            <p class="text-secondary mb-0" style="font-size: 0.8rem; line-height: 1.8;">We supervise vendor logistics, production run-of-show schedules, venue transformations, lighting acoustics, and table scaping.</p>
+                        </div>
+                    </div>
+                    <!-- Process 4 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card h-100 border-0 rounded-4 shadow-sm bg-white p-4 p-xl-4 position-relative overflow-hidden" style="border: 1px solid #f9f9f9 !important;">
+                            <div class="d-flex justify-content-between align-items-center mb-4 pb-2">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background-color: #fbf8f3; color: #b58349; border: 1px solid rgba(181, 131, 73, 0.2);">
+                                    <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 1.2rem;"></i>
+                                </div>
+                                <div style="font-family: var(--font-heading); color: #d6b88b; font-size: 1.6rem; font-weight: 600;">04</div>
+                            </div>
+                            <h5 class="fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color); font-size: 1.15rem; line-height: 1.4;">The Big Day Celebration<br>& Care</h5>
+                            <p class="text-secondary mb-0" style="font-size: 0.8rem; line-height: 1.8;">Sit back and immerse yourself in the magic. Our senior coordinators manage timelines, guest hospitality, and teardown from start to finish.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Comparison Table -->
+        <section class="py-5" style="background-color: #faf8f5;">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-uppercase fw-bold d-block mb-3" style="color: #b58349; letter-spacing: 2px; font-size: 0.75rem;" data-aos="fade-up">DETAILED BREAKDOWN</span>
+                    <h2 class=" fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color);" data-aos="fade-up" data-aos-delay="100">Compare Packages Feature by Feature</h2>
+                    <p class="text-secondary mx-auto" style="max-width: 650px; font-size: 0.95rem; line-height: 1.6;" data-aos="fade-up" data-aos-delay="200">Examine our clear side-by-side specifications so you can pick the exact level of luxury and dedicated<br class="d-none d-md-block"> attention your gathering deserves.</p>
+                </div>
+
+                <div class="card border-0 rounded-4 shadow-sm bg-white overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0" style="min-width: 900px; border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th class="p-4 py-5 border-bottom border-end" style="width: 25%; font-size: 0.9rem; color: var(--secondary-color); border-color: #f0f0f0 !important; background: transparent;">Key Features</th>
+                                    <th class="text-center p-4 py-5 border-bottom border-end" style="width: 25%; border-color: #f0f0f0 !important; background: transparent;">
+                                        <h5 class="fw-bold mb-1" style="font-family: var(--font-heading); color: var(--secondary-color);">Basic Package</h5>
+                                        <span style="color: #b58349; font-weight: 700; font-size: 1.1rem;">$499</span>
+                                        <span class="d-block text-secondary mt-1" style="font-size: 0.65rem; font-weight: normal;">For intimate parties</span>
+                                    </th>
+                                    <th class="text-center p-4 py-5 position-relative border-bottom border-end" style="width: 25%; background-color: #fbf8f3; border-color: #f0f0f0 !important;">
+                                        <div class="position-absolute start-50 translate-middle-x" style="top: 15px;">
+                                            <span class="badge rounded-pill shadow-sm" style="background-color: #b58349; color: #fff; font-size: 0.55rem; letter-spacing: 1px; padding: 0.4rem 0.8rem;">RECOMMENDED</span>
+                                        </div>
+                                        <h5 class="fw-bold mb-1 mt-3" style="font-family: var(--font-heading); color: var(--secondary-color);">Premium Package</h5>
+                                        <span style="color: #b58349; font-weight: 700; font-size: 1.1rem;">$1,299</span>
+                                        <span class="d-block text-secondary mt-1" style="font-size: 0.65rem; font-weight: normal;">For signature events</span>
+                                    </th>
+                                    <th class="text-center p-4 py-5 border-bottom" style="width: 25%; border-color: #f0f0f0 !important; background: transparent;">
+                                        <h5 class="fw-bold mb-1" style="font-family: var(--font-heading); color: var(--secondary-color);">Luxury Package</h5>
+                                        <span style="color: #b58349; font-weight: 700; font-size: 1.1rem;">$2,499</span>
+                                        <span class="d-block text-secondary mt-1" style="font-size: 0.65rem; font-weight: normal;">For grand celebrations</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="p-4 fw-medium border-bottom border-end" style="font-size: 0.85rem; color: var(--secondary-color); border-color: #f0f0f0 !important; background: transparent;">Guest Capacity</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">Up to 50 guests</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; background-color: #fbf8f3; border-color: #f0f0f0 !important;">Up to 150 guests</td>
+                                    <td class="text-center p-4 text-secondary border-bottom" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">250+ guests</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 fw-medium border-bottom border-end" style="font-size: 0.85rem; color: var(--secondary-color); border-color: #f0f0f0 !important; background: transparent;">Planning & Design Sessions</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">2 Dedicated Sessions</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; background-color: #fbf8f3; border-color: #f0f0f0 !important;">5 Dedicated Sessions</td>
+                                    <td class="text-center p-4 text-secondary border-bottom" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">Unlimited Sessions</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 fw-medium border-bottom border-end" style="font-size: 0.85rem; color: var(--secondary-color); border-color: #f0f0f0 !important; background: transparent;">Venue Styling & Florals</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">Essential Table Accents & Backdrop</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; background-color: #fbf8f3; border-color: #f0f0f0 !important;">Full Custom Theme & Floral Arches</td>
+                                    <td class="text-center p-4 text-secondary border-bottom" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">Bespoke Architectural Florals & Drapes</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 fw-medium border-bottom border-end" style="font-size: 0.85rem; color: var(--secondary-color); border-color: #f0f0f0 !important; background: transparent;">Catering & Beverage Options</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">Standard Buffet Menu</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; background-color: #fbf8f3; border-color: #f0f0f0 !important;">Multi-Course Premium Plated or Buffet</td>
+                                    <td class="text-center p-4 text-secondary border-bottom" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">Gourmet Live Stations & Mixology Bar</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 fw-medium border-bottom border-end" style="font-size: 0.85rem; color: var(--secondary-color); border-color: #f0f0f0 !important; background: transparent;">Photo & Video Coverage</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">4 Hours (1 Lead Photographer)</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; background-color: #fbf8f3; border-color: #f0f0f0 !important;">8 Hours (Photo + Cinematic Film)</td>
+                                    <td class="text-center p-4 text-secondary border-bottom" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">Full Day + Drone Aerial + 2 Teams</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 fw-medium border-bottom border-end" style="font-size: 0.85rem; color: var(--secondary-color); border-color: #f0f0f0 !important; background: transparent;">Sound & DJ Entertainment</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">—</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; background-color: #fbf8f3; border-color: #f0f0f0 !important;"><i class="fa-solid fa-check me-2" style="color: #b58349;"></i>Pro DJ + Sound Setup</td>
+                                    <td class="text-center p-4 text-secondary border-bottom" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;"><i class="fa-solid fa-check me-2" style="color: #b58349;"></i>Live Band & Pro DJ Ensemble</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 fw-medium border-bottom border-end" style="font-size: 0.85rem; color: var(--secondary-color); border-color: #f0f0f0 !important; background: transparent;">Day-of Event Coordinators</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">1 Coordinator</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; background-color: #fbf8f3; border-color: #f0f0f0 !important;">2 Dedicated Coordinators</td>
+                                    <td class="text-center p-4 text-secondary border-bottom" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">3 Coordinators + VIP Concierge</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 fw-medium border-bottom border-end" style="font-size: 0.85rem; color: var(--secondary-color); border-color: #f0f0f0 !important; background: transparent;">Post-Event Teardown & Cleanup</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">Basic decor removal</td>
+                                    <td class="text-center p-4 text-secondary border-bottom border-end" style="font-size: 0.8rem; background-color: #fbf8f3; border-color: #f0f0f0 !important;">Complete Venue Reset</td>
+                                    <td class="text-center p-4 text-secondary border-bottom" style="font-size: 0.8rem; border-color: #f0f0f0 !important; background: transparent;">Complete Reset & White-Glove Care</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 py-4 fw-medium border-end text-secondary" style="font-size: 0.85rem; font-style: italic; border-color: #f0f0f0 !important; background: transparent;">Ready to secure your date?</td>
+                                    <td class="text-center p-4 py-4 border-end" style="border-color: #f0f0f0 !important; background: transparent;"><a href="#" class="text-decoration-underline" style="font-size: 0.8rem; color: var(--secondary-color); font-weight: 600; text-underline-offset: 4px;">Select Basic</a></td>
+                                    <td class="text-center p-4 py-4 border-end" style="background-color: #fbf8f3; border-color: #f0f0f0 !important;">
+                                        <a href="#" class="btn rounded-1 px-4 py-2" style="background-color: #b58349; color: #fff; font-size: 0.8rem; font-weight: 500;">Select Premium</a>
+                                    </td>
+                                    <td class="text-center p-4 py-4" style="border-color: #f0f0f0 !important; background: transparent;"><a href="#" class="text-decoration-underline" style="font-size: 0.8rem; color: var(--secondary-color); font-weight: 600; text-underline-offset: 4px;">Select Luxury</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What's Included Section -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-4 text-center text-lg-start" data-aos="fade-right">
+                        <span class="text-uppercase fw-bold d-block mb-3" style="color: #b58349; letter-spacing: 2px; font-size: 0.75rem;">ALL PACKAGES INCLUDE</span>
+                        <h2 class=" fw-bold mb-4" style="font-family: var(--font-heading); color: var(--secondary-color);">What's Included?</h2>
+                        <p class="text-secondary mb-5 mx-auto ms-lg-0" style="font-size: 0.95rem; line-height: 1.7; max-width: 400px;">Every package comes with a set of essential features to ensure a smooth and memorable experience.</p>
+                        <a href="portfolio.html" class="btn rounded-2 px-4 py-3 fw-medium text-white d-inline-flex align-items-center shadow-sm" style="background-color: #b58349; border: none; font-size: 0.9rem;">
+                            View All Services &nbsp;<i class="fa-solid fa-arrow-right" style="font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-8" data-aos="fade-left" data-aos-delay="200">
+                        <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
+                            <div class="col">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: #fcfbf9; color: #b58349; border: 1px solid rgba(181, 131, 73, 0.2);">
+                                    <i class="fa-regular fa-calendar" style="font-size: 1.4rem;"></i>
+                                </div>
+                                <span class="d-block fw-bold" style="font-size: 0.75rem; color: var(--secondary-color);">Event Planning</span>
+                                <span class="d-block text-secondary mt-1" style="font-size: 0.7rem;">& Coordination</span>
+                            </div>
+                            <div class="col">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: #fcfbf9; color: #b58349; border: 1px solid rgba(181, 131, 73, 0.2);">
+                                    <i class="fa-regular fa-sun" style="font-size: 1.4rem;"></i>
+                                </div>
+                                <span class="d-block fw-bold" style="font-size: 0.75rem; color: var(--secondary-color);">Venue Decoration</span>
+                                <span class="d-block text-secondary mt-1" style="font-size: 0.7rem;">& Setup</span>
+                            </div>
+                            <div class="col">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: #fcfbf9; color: #b58349; border: 1px solid rgba(181, 131, 73, 0.2);">
+                                    <i class="fa-solid fa-bell-concierge" style="font-size: 1.4rem;"></i>
+                                </div>
+                                <span class="d-block fw-bold" style="font-size: 0.75rem; color: var(--secondary-color);">Catering &</span>
+                                <span class="d-block text-secondary mt-1" style="font-size: 0.7rem;">Food Service</span>
+                            </div>
+                            <div class="col">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: #fcfbf9; color: #b58349; border: 1px solid rgba(181, 131, 73, 0.2);">
+                                    <i class="fa-solid fa-camera" style="font-size: 1.4rem;"></i>
+                                </div>
+                                <span class="d-block fw-bold" style="font-size: 0.75rem; color: var(--secondary-color);">Photography &</span>
+                                <span class="d-block text-secondary mt-1" style="font-size: 0.7rem;">Videography</span>
+                            </div>
+                            <div class="col mt-sm-4">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: #fcfbf9; color: #b58349; border: 1px solid rgba(181, 131, 73, 0.2);">
+                                    <i class="fa-solid fa-music" style="font-size: 1.4rem;"></i>
+                                </div>
+                                <span class="d-block fw-bold" style="font-size: 0.75rem; color: var(--secondary-color);">Entertainment</span>
+                                <span class="d-block text-secondary mt-1" style="font-size: 0.7rem;">(DJ / Live Music)</span>
+                            </div>
+                            <div class="col mt-sm-4">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: #fcfbf9; color: #b58349; border: 1px solid rgba(181, 131, 73, 0.2);">
+                                    <i class="fa-solid fa-user-group" style="font-size: 1.4rem;"></i>
+                                </div>
+                                <span class="d-block fw-bold" style="font-size: 0.75rem; color: var(--secondary-color);">Guest Management</span>
+                                <span class="d-block text-secondary mt-1" style="font-size: 0.7rem;">& Hospitality</span>
+                            </div>
+                            <div class="col mt-sm-4">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: #fcfbf9; color: #b58349; border: 1px solid rgba(181, 131, 73, 0.2);">
+                                    <i class="fa-solid fa-heart" style="font-size: 1.4rem;"></i>
+                                </div>
+                                <span class="d-block fw-bold" style="font-size: 0.75rem; color: var(--secondary-color);">Theme & Concept</span>
+                                <span class="d-block text-secondary mt-1" style="font-size: 0.7rem;">Design</span>
+                            </div>
+                            <div class="col mt-sm-4">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px; background-color: #fcfbf9; color: #b58349; border: 1px solid rgba(181, 131, 73, 0.2);">
+                                    <i class="fa-regular fa-clock" style="font-size: 1.4rem;"></i>
+                                </div>
+                                <span class="d-block fw-bold" style="font-size: 0.75rem; color: var(--secondary-color);">On-Time</span>
+                                <span class="d-block text-secondary mt-1" style="font-size: 0.7rem;">Execution</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Package CTA -->
+        <section class="py-5 position-relative d-flex align-items-center" style="background: linear-gradient(90deg, rgba(8, 7, 5, 0.95) 0%, rgba(20, 16, 12, 0.82) 55%, rgba(18, 14, 10, 0.6) 100%), url('./assets/images/img_78.webp') center/cover; min-height: 250px;">
+            <div class="container position-relative z-1 text-center text-lg-start">
+                <div class="row align-items-center justify-content-between g-4">
+                    <div class="col-lg-8 text-white" data-aos="fade-right">
+                        <span class="text-uppercase fw-bold d-block mb-3" style="color: #b58349; letter-spacing: 2px; font-size: 0.7rem;">HAVE A UNIQUE IDEA?</span>
+                        <h2 class=" fw-bold mb-3 text-white" style="font-family: var(--font-heading);">Need a Custom Package?</h2>
+                        <p class="mb-0 mx-auto mx-lg-0" style="color: rgba(255, 255, 255, 0.75); font-size: 0.95rem; line-height: 1.6; max-width: 600px;">Tell us your vision, and we'll create a personalized package just for you. No idea is too big<br class="d-none d-md-block"> or small!</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="100">
+                        <a href="contact.html" class="btn rounded-pill px-4 py-3 fw-medium d-inline-flex align-items-center shadow-sm" style="background-color: #b58349; color: #fff; border: none; font-size: 0.95rem;">
+                            Request a Custom Quote &nbsp;<i class="fa-solid fa-arrow-right" style="font-size: 0.85rem;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-uppercase fw-bold d-block mb-3" style="color: #b58349; letter-spacing: 2px; font-size: 0.75rem;" data-aos="fade-up">HAVE QUESTIONS?</span>
+                    <h2 class=" fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color);" data-aos="fade-up" data-aos-delay="100">Everything You Need to Know</h2>
+                    <p class="text-secondary mx-auto" style="max-width: 750px; font-size: 0.95rem; line-height: 1.6;" data-aos="fade-up" data-aos-delay="200">Find answers to commonly asked questions about booking, customizations, timelines, and payment<br class="d-none d-md-block"> options.</p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-9" data-aos="fade-up" data-aos-delay="100">
+                        <div class="accordion" id="faqAccordionPackages">
+                            
+                            <!-- FAQ 1 -->
+                            <div class="mb-3 rounded-4" style="background-color: #fafafa; border: 1px solid #f0f0f0;">
+                                <h2 class="mb-0">
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqp1">
+                                        <span class="fw-semibold pe-3" style="color: var(--secondary-color); font-size: 0.95rem;">Can we customize an existing package?</span>
+                                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; background-color: #f0f0f0; color: #888;">
+                                            <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faqp1" class="accordion-collapse collapse" data-bs-parent="#faqAccordionPackages">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        Absolutely! While our standard packages cover most needs, we are always happy to tailor a package specifically for your unique event requirements.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- FAQ 2 -->
+                            <div class="mb-3 rounded-4" style="background-color: #fafafa; border: 1px solid #f0f0f0;">
+                                <h2 class="mb-0">
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqp2">
+                                        <span class="fw-semibold pe-3" style="color: var(--secondary-color); font-size: 0.95rem;">How far in advance should we book our event?</span>
+                                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; background-color: #f0f0f0; color: #888;">
+                                            <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faqp2" class="accordion-collapse collapse" data-bs-parent="#faqAccordionPackages">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        For large-scale events, we recommend booking 9 to 12 months in advance. For smaller parties and corporate events, 3 to 6 months is usually sufficient.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 3 -->
+                            <div class="mb-3 rounded-4" style="background-color: #fafafa; border: 1px solid #f0f0f0;">
+                                <h2 class="mb-0">
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqp3">
+                                        <span class="fw-semibold pe-3" style="color: var(--secondary-color); font-size: 0.95rem;">What is your payment and cancellation policy?</span>
+                                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; background-color: #f0f0f0; color: #888;">
+                                            <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faqp3" class="accordion-collapse collapse" data-bs-parent="#faqAccordionPackages">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        We require a 30% deposit to secure your date. The remaining balance is split into milestones, with final payment due 14 days prior to the event. Cancellations must be made 60 days in advance.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 4 -->
+                            <div class="mb-3 rounded-4" style="background-color: #fafafa; border: 1px solid #f0f0f0;">
+                                <h2 class="mb-0">
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqp4">
+                                        <span class="fw-semibold pe-3" style="color: var(--secondary-color); font-size: 0.95rem;">Do you work with outside vendors or venues?</span>
+                                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; background-color: #f0f0f0; color: #888;">
+                                            <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faqp4" class="accordion-collapse collapse" data-bs-parent="#faqAccordionPackages">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        Yes, we have a curated list of trusted partners, but we are always open to collaborating with new venues and external vendors to bring your vision to life.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- FAQ 5 -->
+                            <div class="mb-3 rounded-4" style="background-color: #fafafa; border: 1px solid #f0f0f0;">
+                                <h2 class="mb-0">
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqp5">
+                                        <span class="fw-semibold pe-3" style="color: var(--secondary-color); font-size: 0.95rem;">What happens if weather conditions disrupt an outdoor setup?</span>
+                                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; background-color: #f0f0f0; color: #888;">
+                                            <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faqp5" class="accordion-collapse collapse" data-bs-parent="#faqAccordionPackages">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        We always develop a comprehensive "Plan B" for any outdoor event. If weather conditions are unfavorable, we seamlessly transition to the backup indoor space or utilize our marquee tents without compromising the design.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- FAQ 6 -->
+                            <div class="mb-3 rounded-4" style="background-color: #fafafa; border: 1px solid #f0f0f0;">
+                                <h2 class="mb-0">
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqp6">
+                                        <span class="fw-semibold pe-3" style="color: var(--secondary-color); font-size: 0.95rem;">Is an on-site event coordinator included during the entire event?</span>
+                                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; background-color: #f0f0f0; color: #888;">
+                                            <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faqp6" class="accordion-collapse collapse" data-bs-parent="#faqAccordionPackages">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        Absolutely. A dedicated coordinator (or a full team, depending on your package) will be present on-site from the beginning of setup until the final guest departs to ensure flawless execution.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-5" style="background-color: #fafafa;">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-uppercase fw-bold d-block mb-3" style="color: #b58349; letter-spacing: 2px; font-size: 0.75rem;" data-aos="fade-up">TESTIMONIALS</span>
+                    <h2 class=" fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color);" data-aos="fade-up" data-aos-delay="100">What Our Clients Say</h2>
+                    <p class="text-secondary mx-auto" style="max-width: 650px; font-size: 0.95rem; line-height: 1.6;" data-aos="fade-up" data-aos-delay="200">Real stories. Happy clients. Unforgettable events.</p>
+                </div>
+                
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <!-- Review 1 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card h-100 border-0 rounded-4 p-4 p-xl-4 bg-white shadow-sm d-flex flex-column" style="border: 1px solid #f9f9f9 !important;">
+                            <div class="mb-4" style="color: #f59e0b; font-size: 0.8rem;">
+                                <i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.85rem; line-height: 1.8; font-style: italic;">"The team made our wedding day absolutely perfect! Every detail was planned so beautifully."</p>
+                            <hr style="border-top: 1px solid #f0f0f0; margin-bottom: 1.5rem; opacity: 1;">
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="./assets/images/img_79.webp" alt="Priya Sharma" class="rounded-circle me-3" style="width: 42px; height: 42px; object-fit: cover;">
+                                <div>
+                                    <h6 class="fw-bold mb-1" style="color: var(--secondary-color); font-size: 0.85rem;">Priya Sharma</h6>
+                                    <span style="color: #999; font-size: 0.75rem;">Hyderabad</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card h-100 border-0 rounded-4 p-4 p-xl-4 bg-white shadow-sm d-flex flex-column" style="border: 1px solid #f9f9f9 !important;">
+                            <div class="mb-4" style="color: #f59e0b; font-size: 0.8rem;">
+                                <i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.85rem; line-height: 1.8; font-style: italic;">"Professional, creative and truly amazing service. Highly recommended!!"</p>
+                            <hr style="border-top: 1px solid #f0f0f0; margin-bottom: 1.5rem; opacity: 1;">
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="./assets/images/img_80.webp" alt="Rohit Verma" class="rounded-circle me-3" style="width: 42px; height: 42px; object-fit: cover;">
+                                <div>
+                                    <h6 class="fw-bold mb-1" style="color: var(--secondary-color); font-size: 0.85rem;">Rohit Verma</h6>
+                                    <span style="color: #999; font-size: 0.75rem;">Bangalore</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 3 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card h-100 border-0 rounded-4 p-4 p-xl-4 bg-white shadow-sm d-flex flex-column" style="border: 1px solid #f9f9f9 !important;">
+                            <div class="mb-4" style="color: #f59e0b; font-size: 0.8rem;">
+                                <i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.85rem; line-height: 1.8; font-style: italic;">"Our birthday party was beyond our expectations. The decorations and arrangements were fantastic!"</p>
+                            <hr style="border-top: 1px solid #f0f0f0; margin-bottom: 1.5rem; opacity: 1;">
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="./assets/images/img_81.webp" alt="Sneha Reddy" class="rounded-circle me-3" style="width: 42px; height: 42px; object-fit: cover;">
+                                <div>
+                                    <h6 class="fw-bold mb-1" style="color: var(--secondary-color); font-size: 0.85rem;">Sneha Reddy</h6>
+                                    <span style="color: #999; font-size: 0.75rem;">Chennai</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer will be injected here via JS -->
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50
+        });
+    </script>
+</body>
+</html>

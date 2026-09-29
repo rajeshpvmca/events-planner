@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Events Planner</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Custom Accordion Chevron hiding (optional) to make it cleaner */
+        .accordion-button:not(.collapsed) {
+            background-color: #fff;
+            color: var(--primary-color) !important;
+            box-shadow: none;
+        }
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0,0,0,.125);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header will be injected here via JS -->
+    <header id="site-header" class="site-header"></header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="position-relative d-flex align-items-center" style="min-height: 90vh; background: linear-gradient(90deg, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.7) 50%, rgba(2, 6, 23, 0.4) 100%), url('./assets/images/events-banner.webp') center/cover no-repeat; overflow: hidden; padding-top: 100px;">
+            <div class="container position-relative z-1">
+                <div class="row align-items-center py-5">
+                    <div class="col-lg-7 text-white" data-aos="fade-right">
+                        <span class="text-uppercase fw-bold d-block mb-3" style="color: var(--primary-color); letter-spacing: 2px; font-size: 0.75rem;">OUR EVENTS</span>
+                        <h1 class="mb-4 text-white" style="font-family: var(--font-heading); line-height: 1.2; font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 500;">Memorable Events,<br><span style="font-style: italic; color: var(--primary-color);">For Every Occasion</span></h1>
+                        <p class="mb-0" style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.8); max-width: 650px; line-height: 1.7;">From intimate gatherings to grand celebrations, we create events that leave lasting memories. Explore our diverse range of events and find the perfect inspiration for your special day.</p>
+                    </div>
+                    <div class="col-lg-5 text-lg-end mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
+                        <span class="d-inline-block" style="font-family: 'Great Vibes', cursive; color: var(--primary-color); font-size: clamp(1.8rem, 4vw, 2.5rem); transform: rotate(-6deg); opacity: 0.95;">Every Event Tells a Story &#9825;</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Grid with Categories -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <!-- Filters -->
+                <div class="d-flex flex-wrap justify-content-center gap-2 gap-md-3 mb-5" data-aos="fade-up">
+                    <button class="btn rounded-pill px-4 py-2 text-white fw-medium border-0 shadow-sm" style="background-color: var(--primary-color); font-size: 0.85rem;">All Events</button>
+                    <button class="btn rounded-pill px-4 py-2 fw-medium bg-white text-secondary" style="font-size: 0.85rem; border: 1px solid #e0e0e0;"><i class="fa-solid fa-ring me-2" style="color: var(--primary-color);"></i> Weddings</button>
+                    <button class="btn rounded-pill px-4 py-2 fw-medium bg-white text-secondary" style="font-size: 0.85rem; border: 1px solid #e0e0e0;"><i class="fa-solid fa-cake-candles me-2" style="color: var(--primary-color);"></i> Birthdays</button>
+                    <button class="btn rounded-pill px-4 py-2 fw-medium bg-white text-secondary" style="font-size: 0.85rem; border: 1px solid #e0e0e0;"><i class="fa-solid fa-briefcase me-2" style="color: var(--primary-color);"></i> Corporate</button>
+                    <button class="btn rounded-pill px-4 py-2 fw-medium bg-white text-secondary" style="font-size: 0.85rem; border: 1px solid #e0e0e0;"><i class="fa-solid fa-masks-theater me-2" style="color: var(--primary-color);"></i> Parties</button>
+                    <button class="btn rounded-pill px-4 py-2 fw-medium bg-white text-secondary" style="font-size: 0.85rem; border: 1px solid #e0e0e0;"><i class="fa-solid fa-graduation-cap me-2" style="color: var(--primary-color);"></i> College & School</button>
+                    <button class="btn rounded-pill px-4 py-2 fw-medium bg-white text-secondary" style="font-size: 0.85rem; border: 1px solid #e0e0e0;"><i class="fa-solid fa-heart me-2" style="color: var(--primary-color);"></i> Engagements & Receptions</button>
+                </div>
+            </div>
+
+            <!-- Grid Container -->
+            <div class="container">
+                <div class="p-4 p-md-5 rounded-4" style="background-color: #f8f9fa;">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 g-lg-5">
+                        <!-- Card 1 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card h-100 border-0 rounded-4 overflow-hidden bg-white shadow-sm" style="transition: transform 0.3s ease;">
+                            <div class="position-relative" style="height: 220px;">
+                                <img src="./assets/images/img_45.webp" class="w-100 h-100" style="object-fit: cover;" alt="Weddings">
+                                <div class="position-absolute translate-middle-y start-0 ms-4 rounded-circle d-flex align-items-center justify-content-center bg-white" style="width: 40px; height: 40px; bottom: -20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                    <i class="fa-solid fa-ring" style="color: var(--primary-color); font-size: 1rem;"></i>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 pt-4 mt-2 d-flex flex-column">
+                                <h5 class="fw-bold mb-3" style="color: var(--secondary-color); font-family: var(--font-heading);">Weddings</h5>
+                                <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.85rem; line-height: 1.6;">Make your special day truly unforgettable with our bespoke wedding management and styling services tailored to your unique love story.</p>
+                                <a href="#" class="text-decoration-none fw-semibold" style="color: var(--primary-color); font-size: 0.85rem;">View Details <i class="fa-solid fa-arrow-right ms-1" style="font-size: 0.75rem;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card h-100 border-0 rounded-4 overflow-hidden bg-white shadow-sm">
+                            <div class="position-relative" style="height: 220px;">
+                                <img src="./assets/images/img_46.webp" class="w-100 h-100" style="object-fit: cover;" alt="Birthday Parties">
+                                <div class="position-absolute translate-middle-y start-0 ms-4 rounded-circle d-flex align-items-center justify-content-center bg-white" style="width: 40px; height: 40px; bottom: -20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                    <i class="fa-solid fa-cake-candles" style="color: var(--primary-color); font-size: 1rem;"></i>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 pt-4 mt-2 d-flex flex-column">
+                                <h5 class="fw-bold mb-3" style="color: var(--secondary-color); font-family: var(--font-heading);">Birthday Parties</h5>
+                                <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.85rem; line-height: 1.6;">From intimate gatherings to lavish celebrations, we design milestone birthdays that perfectly match your style and personality.</p>
+                                <a href="#" class="text-decoration-none fw-semibold" style="color: var(--primary-color); font-size: 0.85rem;">View Details <i class="fa-solid fa-arrow-right ms-1" style="font-size: 0.75rem;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card h-100 border-0 rounded-4 overflow-hidden bg-white shadow-sm">
+                            <div class="position-relative" style="height: 220px;">
+                                <img src="./assets/images/img_47.webp" class="w-100 h-100" style="object-fit: cover;" alt="Corporate Events">
+                                <div class="position-absolute translate-middle-y start-0 ms-4 rounded-circle d-flex align-items-center justify-content-center bg-white" style="width: 40px; height: 40px; bottom: -20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                    <i class="fa-solid fa-briefcase" style="color: var(--primary-color); font-size: 1rem;"></i>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 pt-4 mt-2 d-flex flex-column">
+                                <h5 class="fw-bold mb-3" style="color: var(--secondary-color); font-family: var(--font-heading);">Corporate Events</h5>
+                                <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.85rem; line-height: 1.6;">Professional, high-impact corporate gatherings, seminars, and galas executed with absolute precision and elegance.</p>
+                                <a href="#" class="text-decoration-none fw-semibold" style="color: var(--primary-color); font-size: 0.85rem;">View Details <i class="fa-solid fa-arrow-right ms-1" style="font-size: 0.75rem;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card h-100 border-0 rounded-4 overflow-hidden bg-white shadow-sm">
+                            <div class="position-relative" style="height: 220px;">
+                                <img src="./assets/images/img_48.webp" class="w-100 h-100" style="object-fit: cover;" alt="Private Parties">
+                                <div class="position-absolute translate-middle-y start-0 ms-4 rounded-circle d-flex align-items-center justify-content-center bg-white" style="width: 40px; height: 40px; bottom: -20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                    <i class="fa-solid fa-masks-theater" style="color: var(--primary-color); font-size: 1rem;"></i>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 pt-4 mt-2 d-flex flex-column">
+                                <h5 class="fw-bold mb-3" style="color: var(--secondary-color); font-family: var(--font-heading);">Private Parties</h5>
+                                <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.85rem; line-height: 1.6;">Celebrate life's special moments with custom themes, stylish décor and unforgettable experiences.</p>
+                                <a href="#" class="text-decoration-none fw-semibold" style="color: var(--primary-color); font-size: 0.85rem;">View Details <i class="fa-solid fa-arrow-right ms-1" style="font-size: 0.75rem;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card h-100 border-0 rounded-4 overflow-hidden bg-white shadow-sm">
+                            <div class="position-relative" style="height: 220px;">
+                                <img src="./assets/images/img_49.webp" class="w-100 h-100" style="object-fit: cover;" alt="College & School Events">
+                                <div class="position-absolute translate-middle-y start-0 ms-4 rounded-circle d-flex align-items-center justify-content-center bg-white" style="width: 40px; height: 40px; bottom: -20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                    <i class="fa-solid fa-graduation-cap" style="color: var(--primary-color); font-size: 1rem;"></i>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 pt-4 mt-2 d-flex flex-column">
+                                <h5 class="fw-bold mb-3" style="color: var(--secondary-color); font-family: var(--font-heading);">College & School Events</h5>
+                                <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.85rem; line-height: 1.6;">From cultural fests to annual days, we create engaging and memorable events for students and institutions.</p>
+                                <a href="#" class="text-decoration-none fw-semibold" style="color: var(--primary-color); font-size: 0.85rem;">View Details <i class="fa-solid fa-arrow-right ms-1" style="font-size: 0.75rem;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card h-100 border-0 rounded-4 overflow-hidden bg-white shadow-sm">
+                            <div class="position-relative" style="height: 220px;">
+                                <img src="./assets/images/img_50.webp" class="w-100 h-100" style="object-fit: cover;" alt="Engagements & Receptions">
+                                <div class="position-absolute translate-middle-y start-0 ms-4 rounded-circle d-flex align-items-center justify-content-center bg-white" style="width: 40px; height: 40px; bottom: -20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                    <i class="fa-solid fa-heart" style="color: var(--primary-color); font-size: 1rem;"></i>
+                                </div>
+                            </div>
+                            <div class="card-body p-4 pt-4 mt-2 d-flex flex-column">
+                                <h5 class="fw-bold mb-3" style="color: var(--secondary-color); font-family: var(--font-heading);">Engagements & Receptions</h5>
+                                <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.85rem; line-height: 1.6;">Celebrate the beginning of forever with beautiful setups, elegant décor and heartfelt moments.</p>
+                                <a href="#" class="text-decoration-none fw-semibold" style="color: var(--primary-color); font-size: 0.85rem;">View Details <i class="fa-solid fa-arrow-right ms-1" style="font-size: 0.75rem;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our 4-Step Planning Process -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-uppercase fw-bold d-block mb-3" style="color: var(--primary-color); letter-spacing: 2px; font-size: 0.75rem;" data-aos="fade-up">THE JOURNEY</span>
+                    <h2 class=" fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color);" data-aos="fade-up" data-aos-delay="100">Our 4-Step Planning Process</h2>
+                    <div class="mx-auto mb-4" style="height: 2px; width: 40px; background-color: var(--primary-color);" data-aos="fade-up" data-aos-delay="150"></div>
+                    <p class="text-secondary mx-auto" style="max-width: 650px; font-size: 0.95rem; line-height: 1.6;" data-aos="fade-up" data-aos-delay="200">From initial daydream to the final confetti shower, we orchestrate every nuance with uncompromising artistry and military precision.</p>
+                </div>
+                
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                    <!-- Step 1 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card h-100 p-4 shadow-sm" style="background-color: #fffdf5; border: 1px solid #f2e6d0; border-radius: 12px;">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background-color: #f7eed8; border-radius: 8px;">
+                                    <i class="fa-regular fa-comments" style="color: var(--primary-color); font-size: 1.1rem;"></i>
+                                </div>
+                                <span class="fw-bold" style="color: var(--primary-color); font-size: 1.8rem; font-family: var(--font-heading); opacity: 0.7;">01</span>
+                            </div>
+                            <h6 class="fw-bold mb-3" style="color: var(--secondary-color); font-family: var(--font-heading); font-size: 1.1rem;">Discovery & Consultation</h6>
+                            <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.85rem; line-height: 1.6;">Understanding your vision, budget, and guest experience goals to build a bespoke celebration roadmap.</p>
+                            <a href="#" class="text-decoration-none fw-semibold" style="color: var(--primary-color); font-size: 0.75rem;">Phase I: Alignment &nbsp;&gt;</a>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card h-100 p-4 shadow-sm" style="background-color: #fffdf5; border: 1px solid #f2e6d0; border-radius: 12px;">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background-color: #f7eed8; border-radius: 8px;">
+                                    <i class="fa-solid fa-palette" style="color: var(--primary-color); font-size: 1.1rem;"></i>
+                                </div>
+                                <span class="fw-bold" style="color: var(--primary-color); font-size: 1.8rem; font-family: var(--font-heading); opacity: 0.7;">02</span>
+                            </div>
+                            <h6 class="fw-bold mb-3" style="color: var(--secondary-color); font-family: var(--font-heading); font-size: 1.1rem;">Concept & Custom Design</h6>
+                            <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.85rem; line-height: 1.6;">Curating moodboards, 3D floor layouts, florals, lighting schemes, and sensorial décor accents.</p>
+                            <a href="#" class="text-decoration-none fw-semibold" style="color: var(--primary-color); font-size: 0.75rem;">Phase II: Creation &nbsp;&gt;</a>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card h-100 p-4 shadow-sm" style="background-color: #fffdf5; border: 1px solid #f2e6d0; border-radius: 12px;">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background-color: #f7eed8; border-radius: 8px;">
+                                    <i class="fa-solid fa-handshake" style="color: var(--primary-color); font-size: 1.1rem;"></i>
+                                </div>
+                                <span class="fw-bold" style="color: var(--primary-color); font-size: 1.8rem; font-family: var(--font-heading); opacity: 0.7;">03</span>
+                            </div>
+                            <h6 class="fw-bold mb-3" style="color: var(--secondary-color); font-family: var(--font-heading); font-size: 1.1rem;">Vendor & Coordination</h6>
+                            <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.85rem; line-height: 1.6;">Managing caterers, performers, production crews, contracts, and hyper-detailed run-of-show schedules.</p>
+                            <a href="#" class="text-decoration-none fw-semibold" style="color: var(--primary-color); font-size: 0.75rem;">Phase III: Logistics &nbsp;&gt;</a>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card h-100 p-4 shadow-sm" style="background-color: #fffdf5; border: 1px solid #f2e6d0; border-radius: 12px;">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="d-flex align-items-center justify-content-center" style="width: 42px; height: 42px; background-color: #f7eed8; border-radius: 8px;">
+                                    <i class="fa-solid fa-champagne-glasses" style="color: var(--primary-color); font-size: 1.1rem;"></i>
+                                </div>
+                                <span class="fw-bold" style="color: var(--primary-color); font-size: 1.8rem; font-family: var(--font-heading); opacity: 0.7;">04</span>
+                            </div>
+                            <h6 class="fw-bold mb-3" style="color: var(--secondary-color); font-family: var(--font-heading); font-size: 1.1rem;">Flawless Execution</h6>
+                            <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.85rem; line-height: 1.6;">Full on-site event management from dawn until departure so you can immerse yourself in the moment.</p>
+                            <a href="#" class="text-decoration-none fw-semibold" style="color: var(--primary-color); font-size: 0.75rem;">Phase IV: Celebration &nbsp;&gt;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-5" style="background-color: #0d1b2a;">
+            <div class="container">
+                <div class="row text-center text-white g-4 justify-content-center">
+                    <div class="col-6 col-md-3 position-relative" data-aos="fade-up" data-aos-delay="100">
+                        <h2 class=" fw-bold mb-1" style="font-family: var(--font-heading); color: var(--primary-color);">1,200<sup style="font-size: 0.55em;">+</sup></h2>
+                        <span class="d-block mb-1 fw-bold text-uppercase" style="color: var(--primary-color); font-size: 0.7rem; letter-spacing: 2px;">PORTFOLIO</span>
+                        <span class="d-block text-white" style="font-size: 0.85rem; opacity: 0.7;">Events Brought to Life</span>
+                        <!-- Divider -->
+                        <div class="d-none d-md-block position-absolute top-50 end-0 translate-middle-y" style="height: 70%; width: 1px; background-color: rgba(255,255,255,0.1);"></div>
+                    </div>
+                    <div class="col-6 col-md-3 position-relative" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class=" fw-bold mb-1" style="font-family: var(--font-heading); color: var(--primary-color);">99.8<sup style="font-size: 0.55em;">%</sup></h2>
+                        <span class="d-block mb-1 fw-bold text-uppercase" style="color: var(--primary-color); font-size: 0.7rem; letter-spacing: 2px;">PUNCTUALITY</span>
+                        <span class="d-block text-white" style="font-size: 0.85rem; opacity: 0.7;">On-Time Execution Rate</span>
+                        <!-- Divider -->
+                        <div class="d-none d-md-block position-absolute top-50 end-0 translate-middle-y" style="height: 70%; width: 1px; background-color: rgba(255,255,255,0.1);"></div>
+                    </div>
+                    <div class="col-6 col-md-3 position-relative" data-aos="fade-up" data-aos-delay="300">
+                        <h2 class=" fw-bold mb-1" style="font-family: var(--font-heading); color: var(--primary-color);">15<sup style="font-size: 0.55em;">+</sup></h2>
+                        <span class="d-block mb-1 fw-bold text-uppercase" style="color: var(--primary-color); font-size: 0.7rem; letter-spacing: 2px;">HERITAGE</span>
+                        <span class="d-block text-white" style="font-size: 0.85rem; opacity: 0.7;">Years of Industry Excellence</span>
+                        <!-- Divider -->
+                        <div class="d-none d-md-block position-absolute top-50 end-0 translate-middle-y" style="height: 70%; width: 1px; background-color: rgba(255,255,255,0.1);"></div>
+                    </div>
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+                        <h2 class=" fw-bold mb-1" style="font-family: var(--font-heading); color: var(--primary-color);">98<sup style="font-size: 0.55em;">%</sup></h2>
+                        <span class="d-block mb-1 fw-bold text-uppercase" style="color: var(--primary-color); font-size: 0.7rem; letter-spacing: 2px;">EXCELLENCE</span>
+                        <span class="d-block text-white" style="font-size: 0.85rem; opacity: 0.7;">5-Star Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Turning Your Dreams Into Beautiful Celebrations Section -->
+        <section class="py-5" style="background-color: #faf8f5;">
+            <div class="container">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <!-- Left Images (col-lg-5) -->
+                    <div class="col-lg-5" data-aos="fade-right">
+                        <div class="position-relative mx-auto" style="height: 400px; max-width: 380px;">
+                            <!-- Back Image (Polaroid) -->
+                            <div class="position-absolute bg-white p-2 pb-4 shadow-sm" style="width: 80%; height: 75%; top: 0; left: 0; transform: rotate(-6deg); z-index: 1;">
+                                <img src="./assets/images/img_51.webp" class="w-100 h-100" style="object-fit: cover;" alt="Outdoor Event">
+                            </div>
+                            <!-- Front Image (Polaroid) -->
+                            <div class="position-absolute bg-white p-2 pb-4 shadow" style="width: 80%; height: 75%; bottom: 0; right: 0; transform: rotate(4deg); z-index: 2;">
+                                <img src="./assets/images/img_52.webp" class="w-100 h-100" style="object-fit: cover;" alt="Floral Centerpiece">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Middle Content (col-lg-4) -->
+                    <div class="col-lg-4 ps-lg-4 mt-5 mt-lg-0" data-aos="fade-up">
+                        <span class="text-uppercase fw-bold d-block mb-3" style="color: var(--primary-color); letter-spacing: 2px; font-size: 0.7rem;">OUR EVENTS</span>
+                        
+                        <h2 class=" fw-bold mb-4" style="font-family: var(--font-heading); color: var(--secondary-color); line-height: 1.15;">Turning Your<br>Dreams<br><span style="font-style: italic; font-weight: 500; color: var(--primary-color);">Into Beautiful<br>Celebrations</span></h2>
+                        
+                        <p class="text-secondary mb-4" style="font-size: 0.9rem; line-height: 1.8;">No matter the occasion, we bring creativity, experience and passion to make your event extraordinary. From concept to execution, we handle every detail so you can relax and enjoy.</p>
+                        
+                        <a href="contact.html" class="btn rounded-3 px-4 py-2 fw-medium text-white d-inline-flex align-items-center" style="background-color: var(--primary-color); border-color: var(--primary-color); font-size: 0.85rem;">
+                            Plan Your Event &nbsp;<i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
+                        </a>
+                    </div>
+
+                    <!-- Right Features List (col-lg-3) -->
+                    <div class="col-lg-3 ps-lg-5 mt-5 mt-lg-0 position-relative" data-aos="fade-left">
+                        <!-- Divider Line -->
+                        <div class="d-none d-lg-block position-absolute top-50 start-0 translate-middle-y" style="width: 1px; height: 85%; background-color: rgba(185, 129, 62, 0.2);"></div>
+                        
+                        <div class="d-flex flex-column gap-4 py-2 ms-lg-3">
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm" style="width: 38px; height: 38px; background-color: #fffdf5; border: 1px solid #f2e6d0;">
+                                    <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--primary-color); font-size: 0.8rem;"></i>
+                                </div>
+                                <span class="text-secondary" style="font-size: 0.85rem; font-weight: 500;">Elegant Setups</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm" style="width: 38px; height: 38px; background-color: #fffdf5; border: 1px solid #f2e6d0;">
+                                    <i class="fa-solid fa-users" style="color: var(--primary-color); font-size: 0.8rem;"></i>
+                                </div>
+                                <span class="text-secondary" style="font-size: 0.85rem; font-weight: 500;">Professional Team</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm" style="width: 38px; height: 38px; background-color: #fffdf5; border: 1px solid #f2e6d0;">
+                                    <i class="fa-regular fa-clock" style="color: var(--primary-color); font-size: 0.8rem;"></i>
+                                </div>
+                                <span class="text-secondary" style="font-size: 0.85rem; font-weight: 500;">Custom Themes</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm" style="width: 38px; height: 38px; background-color: #fffdf5; border: 1px solid #f2e6d0;">
+                                    <i class="fa-solid fa-box" style="color: var(--primary-color); font-size: 0.8rem;"></i>
+                                </div>
+                                <span class="text-secondary" style="font-size: 0.85rem; font-weight: 500;">On-Time Execution</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm" style="width: 38px; height: 38px; background-color: #fffdf5; border: 1px solid #f2e6d0;">
+                                    <i class="fa-regular fa-star" style="color: var(--primary-color); font-size: 0.8rem;"></i>
+                                </div>
+                                <span class="text-secondary" style="font-size: 0.85rem; font-weight: 500;">Happy Clients</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Signature Events -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
+                    
+                    <!-- Text Column -->
+                    <div class="col" data-aos="fade-right">
+                        <div class="pe-lg-3 d-flex flex-column h-100 mt-2">
+                            <span class="text-uppercase fw-bold mb-3 d-block" style="color: var(--primary-color); letter-spacing: 2px; font-size: 0.7rem;">FEATURED EVENTS</span>
+                            <h2 class=" fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color); line-height: 1.15;">Our Signature<br>Events</h2>
+                            <p class="text-secondary mb-4" style="font-size: 0.9rem; line-height: 1.7;">Take a look at some of our most loved and memorable events.</p>
+                            <div>
+                                <a href="gallery.html" class="btn rounded-pill px-4 py-2 fw-medium d-inline-flex align-items-center" style="border: 1px solid var(--primary-color); color: var(--primary-color); font-size: 0.8rem; background-color: transparent;">
+                                    View All Events &nbsp;<i class="fa-solid fa-arrow-right ms-1" style="font-size: 0.7rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image 1 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-100 mb-3 overflow-hidden rounded-4" style="aspect-ratio: 4/3;">
+                            <img src="./assets/images/img_53.webp" class="w-100 h-100" style="object-fit: cover;" alt="Royal Wedding">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center px-1">
+                            <span class="fw-bold" style="color: var(--secondary-color); font-size: 0.85rem;">Royal Wedding</span>
+                            <i class="fa-solid fa-arrow-right" style="color: var(--primary-color); font-size: 0.75rem;"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 2 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-100 mb-3 overflow-hidden rounded-4" style="aspect-ratio: 4/3;">
+                            <img src="./assets/images/img_54.webp" class="w-100 h-100" style="object-fit: cover;" alt="Luxury Birthday">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center px-1">
+                            <span class="fw-bold" style="color: var(--secondary-color); font-size: 0.85rem;">Luxury Birthday</span>
+                            <i class="fa-solid fa-arrow-right" style="color: var(--primary-color); font-size: 0.75rem;"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 3 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-100 mb-3 overflow-hidden rounded-4" style="aspect-ratio: 4/3;">
+                            <img src="./assets/images/img_55.webp" class="w-100 h-100" style="object-fit: cover;" alt="Corporate Gala">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center px-1">
+                            <span class="fw-bold" style="color: var(--secondary-color); font-size: 0.85rem;">Corporate Gala</span>
+                            <i class="fa-solid fa-arrow-right" style="color: var(--primary-color); font-size: 0.75rem;"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 4 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-100 mb-3 overflow-hidden rounded-4" style="aspect-ratio: 4/3;">
+                            <img src="./assets/images/img_56.webp" class="w-100 h-100" style="object-fit: cover;" alt="Outdoor Celebration">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center px-1">
+                            <span class="fw-bold" style="color: var(--secondary-color); font-size: 0.85rem;">Outdoor Celebration</span>
+                            <i class="fa-solid fa-arrow-right" style="color: var(--primary-color); font-size: 0.75rem;"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Loved by Hosts Section -->
+        <section class="py-5" style="background-color: #faf8f5;">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-uppercase fw-bold d-block mb-3" style="color: var(--primary-color); letter-spacing: 2px; font-size: 0.75rem;" data-aos="fade-up">TESTIMONIALS</span>
+                    <h2 class="display-6 fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color);" data-aos="fade-up" data-aos-delay="100">Client Love & Stories</h2>
+                    <div class="mx-auto mb-4" style="height: 2px; width: 40px; background-color: var(--primary-color);" data-aos="fade-up" data-aos-delay="150"></div>
+                    <p class="text-secondary mx-auto" style="max-width: 650px; font-size: 0.95rem; line-height: 1.6;" data-aos="fade-up" data-aos-delay="200">Discover how we've helped our esteemed clients translate visions into unforgettable moments.</p>
+                </div>
+                
+                <div class="row row-cols-1 row-cols-md-3 g-4 align-items-start">
+                    <!-- Review 1 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card border-0 rounded-4 p-4 p-xl-5 bg-white shadow-sm d-flex flex-column">
+                            <div class="mb-4" style="color: var(--primary-color); font-size: 0.85rem;">
+                                <i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-secondary mb-4 pb-1 flex-grow-1" style="font-size: 0.95rem; line-height: 1.8; font-style: italic; font-family: var(--font-heading);">"The wedding decor took our breath away. Every single detail felt personalized and completely stress-free."</p>
+                            
+                            <hr class="mt-0 mb-4 mx-0" style="border-top: 1px solid #f0f0f0; opacity: 1;">
+                            
+                            <div class="d-flex align-items-center mt-auto">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 42px; height: 42px; background-color: #fff8e1; color: var(--secondary-color); font-size: 0.8rem; font-weight: 600;">
+                                    SV
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1" style="color: var(--secondary-color); font-size: 0.85rem;">Sophia & Liam Vance</h6>
+                                    <span style="color: var(--primary-color); font-size: 0.75rem;">Wedding at The Grand Estate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card border-0 rounded-4 p-4 p-xl-5 bg-white shadow-sm d-flex flex-column">
+                            <div class="mb-4" style="color: var(--primary-color); font-size: 0.85rem;">
+                                <i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-secondary mb-4 pb-1 flex-grow-1" style="font-size: 0.95rem; line-height: 1.8; font-style: italic; font-family: var(--font-heading);">"Our annual tech symposium of 800+ attendees ran seamlessly. Events Planner delivered on both prestige and punctuality."</p>
+                            
+                            <hr class="mt-0 mb-4 mx-0" style="border-top: 1px solid #f0f0f0; opacity: 1;">
+                            
+                            <div class="d-flex align-items-center mt-auto">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 42px; height: 42px; background-color: #fff8e1; color: var(--secondary-color); font-size: 0.8rem; font-weight: 600;">
+                                    MS
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1" style="color: var(--secondary-color); font-size: 0.85rem;">Marcus Sterling</h6>
+                                    <span style="color: var(--primary-color); font-size: 0.75rem;">VP of Operations, Nexus Corp</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 3 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card border-0 rounded-4 p-4 p-xl-5 bg-white shadow-sm d-flex flex-column">
+                            <div class="mb-4" style="color: var(--primary-color); font-size: 0.85rem;">
+                                <i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-secondary mb-4 pb-1 flex-grow-1" style="font-size: 0.95rem; line-height: 1.8; font-style: italic; font-family: var(--font-heading);">"A 50th birthday gala that guests are still talking about weeks later. The ambiance was pure magic."</p>
+                            
+                            <hr class="mt-0 mb-4 mx-0" style="border-top: 1px solid #f0f0f0; opacity: 1;">
+                            
+                            <div class="d-flex align-items-center mt-auto">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 42px; height: 42px; background-color: #fff8e1; color: var(--secondary-color); font-size: 0.8rem; font-weight: 600;">
+                                    ER
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1" style="color: var(--secondary-color); font-size: 0.85rem;">Elena Rostova</h6>
+                                    <span style="color: var(--primary-color); font-size: 0.75rem;">Private Celebration</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Frequently Asked Questions -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-uppercase fw-bold d-block mb-3" style="color: var(--primary-color); letter-spacing: 2px; font-size: 0.75rem;" data-aos="fade-up">CLARITY & PEACE OF MIND</span>
+                    <h2 class=" fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color);" data-aos="fade-up" data-aos-delay="100">Frequently Asked Questions</h2>
+                    <div class="mx-auto mb-4" style="height: 2px; width: 40px; background-color: var(--primary-color);" data-aos="fade-up" data-aos-delay="150"></div>
+                    <p class="text-secondary mx-auto" style="max-width: 650px; font-size: 0.95rem; line-height: 1.6;" data-aos="fade-up" data-aos-delay="200">Everything you need to know about partnering with our event management and decor atelier.</p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-9" data-aos="fade-up" data-aos-delay="100">
+                        <div class="accordion" id="faqAccordion">
+                            <!-- FAQ 1 -->
+                            <div class="mb-3 rounded-4" style="background-color: #fffdf5; border: 1px solid #f2e6d0;">
+                                <h2>
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        <span class="fw-bold pe-3" style="color: var(--secondary-color); font-family: var(--font-heading); font-size: 1.05rem;">How early should we book our event with you?</span>
+                                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; background-color: #fff8e1; color: var(--primary-color);">
+                                            <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        We recommend booking our services 6-12 months in advance for large scale events and weddings, and at least 3 months for smaller private parties to ensure we have ample time for perfect execution and prime vendor selection.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- FAQ 2 -->
+                            <div class="mb-3 rounded-4" style="background-color: #fffdf5; border: 1px solid #f2e6d0;">
+                                <h2>
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        <span class="fw-bold pe-3" style="color: var(--secondary-color); font-family: var(--font-heading); font-size: 1.05rem;">Can you work with our chosen venue and custom themes?</span>
+                                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; background-color: #fff8e1; color: var(--primary-color);">
+                                            <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        Absolutely. Whether you have a specific venue in mind or need assistance finding the perfect location, we adapt our styling and logistics to fit your space. We specialize in bringing unique, custom themes to life.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 3 -->
+                            <div class="mb-3 rounded-4" style="background-color: #fffdf5; border: 1px solid #f2e6d0;">
+                                <h2>
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        <span class="fw-bold pe-3" style="color: var(--secondary-color); font-family: var(--font-heading); font-size: 1.05rem;">Do you offer full-service catering, audio-visual, and entertainment management?</span>
+                                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; background-color: #fff8e1; color: var(--primary-color);">
+                                            <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        Yes, our full-service planning includes curating premium catering menus, managing complex audio-visual setups, and booking top-tier entertainment to ensure a seamless experience for you and your guests.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 4 -->
+                            <div class=" rounded-4" style="background-color: #fffdf5; border: 1px solid #f2e6d0;">
+                                <h2>
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                        <span class="fw-bold pe-3" style="color: var(--secondary-color); font-family: var(--font-heading); font-size: 1.05rem;">What happens in case of unexpected weather for outdoor events?</span>
+                                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 32px; height: 32px; background-color: #fff8e1; color: var(--primary-color);">
+                                            <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        We always develop a comprehensive contingency plan (Plan B) for every outdoor event. This includes securing luxury tenting options, adjusting timelines, or seamlessly transitioning to an indoor backup space if necessary.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA Banner -->
+        <section class="py-5 position-relative overflow-hidden" style="background: #020617;">
+            <div class="container py-4 position-relative z-1">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-4 text-center text-lg-start" data-aos="fade-right">
+                        <span class="d-inline-flex align-items-center text-start" style="font-family: 'Great Vibes', cursive; color: var(--primary-color); font-size: 2.8rem; transform: rotate(-5deg); line-height: 1;">
+                            <span>Let's Create<br>Something Beautiful</span>
+                            <i class="fa-regular fa-heart ms-3" style="font-size: 2rem;"></i>
+                        </span>
+                    </div>
+                    <div class="col-lg-5 text-center text-lg-start ps-lg-4" data-aos="fade-up">
+                        <h3 class="fw-bold mb-2 text-white" style="font-family: var(--font-heading); font-size: 2rem;">Your Dream Event Awaits</h3>
+                        <p class="mb-0" style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Tell us about your vision and let us plan a celebration you'll love.</p>
+                    </div>
+                    <div class="col-lg-3 text-center text-lg-end" data-aos="fade-left">
+                        <a href="contact.html" class="btn rounded-3 px-4 py-2 fw-semibold d-inline-flex align-items-center" style="background-color: var(--primary-color); border: 1px solid var(--primary-color); color: #0d1b2a; font-size: 0.9rem;">
+                            Get Started &nbsp;<i class="fa-solid fa-arrow-right ms-1" style="font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be injected here via JS -->
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50
+        });
+    </script>
+</body>
+</html>

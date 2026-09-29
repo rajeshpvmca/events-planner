@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #c59b6d;
+            --primary-gold-light: #e5ccaa;
+            --badge-bg: #223730;
+            --badge-text: #e1d3b0;
+            --text-dark: #222;
+            --text-muted: #666;
+            --bg-color: #faf8f5;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+            position: relative;
+        }
+        /* Soft glow effect in background */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 40%;
+            height: 50%;
+            background: radial-gradient(circle, rgba(235, 215, 185, 0.4) 0%, rgba(250, 248, 245, 0) 70%);
+            z-index: -1;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Top Badge */
+        .status-badge {
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        /* 404 Text */
+        .error-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(5rem, 10vw, 8rem);
+            font-weight: 700;
+            color: var(--primary-gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #d4af37, #aa7c11);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Search Bar */
+        .search-wrapper {
+            position: relative;
+            max-width: 450px;
+            margin-bottom: 2rem;
+        }
+        .search-wrapper .form-control {
+            border-radius: 50px;
+            padding: 0.8rem 1.5rem;
+            padding-right: 120px;
+            border: 1px solid #e0dbd3;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .search-wrapper .form-control:focus {
+            box-shadow: 0 4px 15px rgba(197, 155, 109, 0.15);
+            border-color: var(--primary-gold-light);
+        }
+        .search-wrapper .btn-search {
+            position: absolute;
+            right: 6px;
+            top: 6px;
+            bottom: 6px;
+            border-radius: 50px;
+            background-color: #eee4d5;
+            color: #8c6a43;
+            border: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0 1.5rem;
+            transition: all 0.3s;
+        }
+        .search-wrapper .btn-search:hover {
+            background-color: #e0d4c2;
+        }
+
+        /* Buttons */
+        .btn-home {
+            background: linear-gradient(135deg, #e3c08f, #c59b6d);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        .btn-home:hover {
+            background: linear-gradient(135deg, #c59b6d, #a98055);
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(197, 155, 109, 0.3);
+        }
+        
+        .btn-explore {
+            background: transparent;
+            color: var(--primary-gold);
+            border: 1px solid var(--primary-gold-light);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        .btn-explore:hover {
+            background: #fdfaf5;
+            color: #a98055;
+            border-color: var(--primary-gold);
+        }
+        
+        /* Popular Destinations */
+        .dest-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 0.8rem;
+        }
+        .dest-pill {
+            display: inline-block;
+            background-color: #f7eee9;
+            color: #4a4a4a;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .dest-pill:hover {
+            background-color: #ecdcd2;
+            color: #222;
+        }
+        
+        /* Right Side Image & Floating Cards */
+        .image-container {
+            position: relative;
+            border-radius: 30px;
+            background: #fff;
+            padding: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+        .image-container img {
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 4/4.5;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+        }
+        
+        /* Top Right Pill */
+        .float-top-right {
+            position: absolute;
+            top: 5%;
+            right: -5%;
+            background: #fff;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #444;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .float-top-right .dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--primary-gold);
+            border-radius: 50%;
+        }
+        
+        /* Bottom Left Card */
+        .float-bottom-left {
+            position: absolute;
+            bottom: 5%;
+            left: -10%;
+            background: #fff;
+            padding: 1.2rem;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            z-index: 2;
+            width: 240px;
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+        .float-bottom-left .tiny-header {
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #888;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Floating Side Icon */
+        .float-side-icon {
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #fff, #f8f4ed);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            color: var(--primary-gold);
+            z-index: 2;
+        }
+        
+        @media (max-width: 991.98px) {
+            .float-bottom-left { left: 5%; }
+            .float-top-right { right: 5%; }
+            .error-number { font-size: 5rem; }
+        }
+    </style>
+</head>
+<body class="min-vh-100 d-flex align-items-center">
+
+    <div class="container py-5">
+        <div class="row align-items-center g-5">
+            
+            <!-- Left Side Content -->
+            <div class="col-lg-6 pe-lg-5">
+                
+                <!-- Badge -->
+                <div class="mb-4">
+                    <span class="status-badge text-uppercase">
+                        <i class="fa-solid fa-layer-group me-2" style="font-size: 0.7rem;"></i> 
+                        ERROR CODE 404 • UNCHARTED CELEBRATION
+                    </span>
+                    <i class="fa-solid fa-sparkles ms-3" style="color: var(--primary-gold-light);"></i>
+                </div>
+                
+                <!-- 404 Header -->
+                <h1 class="error-number">404</h1>
+                <h2 class="heading-serif fw-bold mb-3" style="font-size: 2.2rem; color: var(--text-dark);">
+                    Oops! This Event Took a<br>
+                    <span style="font-style: italic;">Wrong Turn</span>
+                </h2>
+                
+                <p class="mb-5" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; max-width: 450px;">
+                    The page you're looking for doesn't exist or may have been moved. Even the most meticulously orchestrated galas sometimes take an unexpected detour.
+                </p>
+                
+                <!-- Search Bar -->
+                <div class="search-wrapper">
+                    <input type="text" class="form-control" placeholder="Search our events, venues, or planning guide...">
+                    <button class="btn-search">SEARCH</button>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="d-flex flex-wrap gap-3 mb-5">
+                    <a href="index.html" class="btn btn-home text-decoration-none">
+                        <i class="fa-solid fa-arrow-left me-2"></i> Back to Home
+                    </a>
+                    <a href="packages.html" class="btn btn-explore text-decoration-none">
+                        <i class="fa-solid fa-wand-magic-sparkles me-2"></i> Explore Events
+                    </a>
+                </div>
+                
+                <!-- Popular Destinations -->
+                <div>
+                    <div class="dest-label">
+                        <i class="fa-solid fa-caret-down me-1"></i> OR EXPLORE POPULAR DESTINATIONS:
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="packages.html" class="dest-pill">Weddings & Galas</a>
+                        <a href="packages.html" class="dest-pill">Corporate Soirées</a>
+                        <a href="packages.html" class="dest-pill">Private Celebrations</a>
+                        <a href="services.html" class="dest-pill">Curated Venues</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Right Side Image & Cards -->
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="image-container">
+                    <img src="./assets/images/error.webp" alt="Event Planning">
+                    
+                    <!-- Floating Elements -->
+                    <div class="float-top-right">
+                        <span class="dot"></span>
+                        Event Status: Page Rescheduled ✨
+                    </div>
+                    
+                    <div class="float-bottom-left">
+                        <div class="tiny-header mb-2 text-uppercase">
+                            EXCLUSIVE RSVP <i class="fa-solid fa-circle-plus" style="color: var(--primary-gold);"></i>
+                        </div>
+                        <h5 class="fw-bold mb-1" style="font-size: 0.95rem; color: #111;">VIP Grand Gala</h5>
+                        <div class="mb-3" style="font-size: 0.75rem; color: #d35151; font-weight: 500;">
+                            <i class="fa-solid fa-location-dot me-1"></i> Venue Unavailable [404]
+                        </div>
+                        <div class="d-flex align-items-center gap-1" style="font-size: 0.65rem; color: #777;">
+                            <span>Date: TBD • Monograph:</span> 
+                            <span style="background-color: #fcebeb; color: #d35151; padding: 2px 6px; border-radius: 20px; font-weight: 600; font-size: 0.6rem;">RESCHEDULING</span>
+                        </div>
+                    </div>
+                    
+                    <div class="float-side-icon">
+                        <i class="fa-solid fa-marker"></i>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>

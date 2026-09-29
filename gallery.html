@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Events Planner</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header will be injected here via JS -->
+    <header id="site-header" class="site-header"></header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="position-relative d-flex align-items-center" style="min-height: 90vh; background: linear-gradient(90deg, rgba(9, 16, 26, 0.98) 0%, rgba(9, 16, 26, 0.85) 45%, rgba(9, 16, 26, 0.3) 100%), url('./assets/images/gallery-banner.webp') center/cover no-repeat; overflow: hidden; padding-top: 80px;">
+            <div class="container position-relative z-1">
+                <div class="row py-5">
+                    <div class="col-lg-7 text-white" data-aos="fade-right">
+                        <span class="text-uppercase fw-bold d-block mb-3" style="color: var(--primary-color); letter-spacing: 2px; font-size: 0.75rem;">OUR GALLERY</span>
+                        <h1 class="mb-4 text-white" style="font-family: var(--font-heading); line-height: 1.15; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 600;">Moments Captured,<br><span style="color: var(--primary-color);">Memories Forever</span></h1>
+                        <p class="mb-0" style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.85); max-width: 550px; line-height: 1.7;">Take a look at some of our most beautiful events, creative decorations and unforgettable celebrations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid Section -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <!-- Filters -->
+                <div class="d-flex flex-wrap justify-content-center gap-2 gap-md-3 mt-2" data-aos="fade-up">
+                    <button class="btn rounded-pill px-4 py-2 text-white fw-medium shadow-sm border-0 d-inline-flex align-items-center" style="background-color: #b58349; font-size: 0.85rem;"><i class="fa-solid fa-table-cells-large me-2"></i> All</button>
+                    <button class="btn rounded-pill px-4 py-2 fw-medium bg-white text-secondary shadow-sm d-inline-flex align-items-center" style="font-size: 0.85rem; border: 1px solid #f2e6d0;"><i class="fa-solid fa-ring me-2" style="color: #b58349;"></i> Weddings</button>
+                    <button class="btn rounded-pill px-4 py-2 fw-medium bg-white text-secondary shadow-sm d-inline-flex align-items-center" style="font-size: 0.85rem; border: 1px solid #f2e6d0;"><i class="fa-solid fa-cake-candles me-2" style="color: #b58349;"></i> Birthdays</button>
+                    <button class="btn rounded-pill px-4 py-2 fw-medium bg-white text-secondary shadow-sm d-inline-flex align-items-center" style="font-size: 0.85rem; border: 1px solid #f2e6d0;"><i class="fa-solid fa-briefcase me-2" style="color: #b58349;"></i> Corporate</button>
+                    <button class="btn rounded-pill px-4 py-2 fw-medium bg-white text-secondary shadow-sm d-inline-flex align-items-center" style="font-size: 0.85rem; border: 1px solid #f2e6d0;"><i class="fa-solid fa-champagne-glasses me-2" style="color: #b58349;"></i> Parties</button>
+                    <button class="btn rounded-pill px-4 py-2 fw-medium bg-white text-secondary shadow-sm d-inline-flex align-items-center" style="font-size: 0.85rem; border: 1px solid #f2e6d0;"><i class="fa-solid fa-graduation-cap me-2" style="color: #b58349;"></i> College & School</button>
+                    <button class="btn rounded-pill px-4 py-2 fw-medium bg-white text-secondary shadow-sm d-inline-flex align-items-center" style="font-size: 0.85rem; border: 1px solid #f2e6d0;"><i class="fa-regular fa-heart me-2" style="color: #b58349;"></i> Engagements</button>
+                </div>
+
+                <hr class="my-5 mx-auto" style="border-top: 1px solid #f0f0f0; width: 100%; opacity: 1;">
+
+                <!-- Main Grid (Large Cards) -->
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-3">
+                    <!-- Large Card 1 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-sm" style="height: 250px;">
+                            <img src="./assets/images/img_57.webp" class="w-100 h-100 object-fit-cover" alt="Weddings">
+                            <div class="position-absolute bottom-0 start-0 m-3 px-3 py-2 rounded-pill d-flex align-items-center" style="background-color: rgba(0, 0, 0, 0.75);">
+                                <i class="fa-solid fa-ring me-2" style="color: var(--primary-color); font-size: 0.7rem;"></i>
+                                <span class="text-white fw-semibold" style="font-size: 0.75rem;">Weddings</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Large Card 2 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="150">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-sm" style="height: 250px;">
+                            <img src="./assets/images/img_58.webp" class="w-100 h-100 object-fit-cover" alt="Birthdays">
+                            <div class="position-absolute bottom-0 start-0 m-3 px-3 py-2 rounded-pill d-flex align-items-center" style="background-color: rgba(0, 0, 0, 0.75);">
+                                <i class="fa-solid fa-cake-candles me-2" style="color: var(--primary-color); font-size: 0.7rem;"></i>
+                                <span class="text-white fw-semibold" style="font-size: 0.75rem;">Birthdays</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Large Card 3 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-sm" style="height: 250px;">
+                            <img src="./assets/images/img_59.webp" class="w-100 h-100 object-fit-cover" alt="Corporate Events">
+                            <div class="position-absolute bottom-0 start-0 m-3 px-3 py-2 rounded-pill d-flex align-items-center" style="background-color: rgba(0, 0, 0, 0.75);">
+                                <i class="fa-solid fa-briefcase me-2" style="color: var(--primary-color); font-size: 0.7rem;"></i>
+                                <span class="text-white fw-semibold" style="font-size: 0.75rem;">Corporate Events</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Large Card 4 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="250">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-sm" style="height: 250px;">
+                            <img src="./assets/images/img_60.webp" class="w-100 h-100 object-fit-cover" alt="Private Parties">
+                            <div class="position-absolute bottom-0 start-0 m-3 px-3 py-2 rounded-pill d-flex align-items-center" style="background-color: rgba(0, 0, 0, 0.75);">
+                                <i class="fa-solid fa-champagne-glasses me-2" style="color: var(--primary-color); font-size: 0.7rem;"></i>
+                                <span class="text-white fw-semibold" style="font-size: 0.75rem;">Private Parties</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Large Card 5 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="300">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-sm" style="height: 250px;">
+                            <img src="./assets/images/img_61.webp" class="w-100 h-100 object-fit-cover" alt="College & School Events">
+                            <div class="position-absolute bottom-0 start-0 m-3 px-3 py-2 rounded-pill d-flex align-items-center" style="background-color: rgba(0, 0, 0, 0.75);">
+                                <i class="fa-solid fa-graduation-cap me-2" style="color: var(--primary-color); font-size: 0.7rem;"></i>
+                                <span class="text-white fw-semibold" style="font-size: 0.75rem;">College & School Events</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Large Card 6 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="350">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-sm" style="height: 250px;">
+                            <img src="./assets/images/img_62.webp" class="w-100 h-100 object-fit-cover" alt="Engagements & Receptions">
+                            <div class="position-absolute bottom-0 start-0 m-3 px-3 py-2 rounded-pill d-flex align-items-center" style="background-color: rgba(0, 0, 0, 0.75);">
+                                <i class="fa-regular fa-heart me-2" style="color: var(--primary-color); font-size: 0.7rem;"></i>
+                                <span class="text-white fw-semibold" style="font-size: 0.75rem;">Engagements & Receptions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub Grid (Small Cards) -->
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
+                    <!-- 10 Small Cards -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-100 overflow-hidden rounded-4 shadow-sm" style="aspect-ratio: 1/1;">
+                            <img src="./assets/images/img_63.webp" class="w-100 h-100 object-fit-cover" alt="Gallery Image">
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="150">
+                        <div class="w-100 overflow-hidden rounded-4 shadow-sm" style="aspect-ratio: 1/1;">
+                            <img src="./assets/images/img_64.webp" class="w-100 h-100 object-fit-cover" alt="Gallery Image">
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-100 overflow-hidden rounded-4 shadow-sm" style="aspect-ratio: 1/1;">
+                            <img src="./assets/images/img_65.webp" class="w-100 h-100 object-fit-cover" alt="Gallery Image">
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="250">
+                        <div class="w-100 overflow-hidden rounded-4 shadow-sm" style="aspect-ratio: 1/1;">
+                            <img src="./assets/images/img_66.webp" class="w-100 h-100 object-fit-cover" alt="Gallery Image">
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-100 overflow-hidden rounded-4 shadow-sm" style="aspect-ratio: 1/1;">
+                            <img src="./assets/images/img_67.webp" class="w-100 h-100 object-fit-cover" alt="Gallery Image">
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-100 overflow-hidden rounded-4 shadow-sm" style="aspect-ratio: 1/1;">
+                            <img src="./assets/images/img_68.webp" class="w-100 h-100 object-fit-cover" alt="Gallery Image">
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="150">
+                        <div class="w-100 overflow-hidden rounded-4 shadow-sm" style="aspect-ratio: 1/1;">
+                            <img src="./assets/images/img_69.webp" class="w-100 h-100 object-fit-cover" alt="Gallery Image">
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-100 overflow-hidden rounded-4 shadow-sm" style="aspect-ratio: 1/1;">
+                            <img src="./assets/images/img_70.webp" class="w-100 h-100 object-fit-cover" alt="Gallery Image">
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="250">
+                        <div class="w-100 overflow-hidden rounded-4 shadow-sm" style="aspect-ratio: 1/1;">
+                            <img src="./assets/images/img_71.webp" class="w-100 h-100 object-fit-cover" alt="Gallery Image">
+                        </div>
+                    </div>
+                    <div class="col" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-100 overflow-hidden rounded-4 shadow-sm" style="aspect-ratio: 1/1;">
+                            <img src="./assets/images/img_72.webp" class="w-100 h-100 object-fit-cover" alt="Gallery Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="py-5 position-relative overflow-hidden" style="background-color: #f7f4ed;">
+            <!-- Subtle Background Shapes -->
+            <div class="position-absolute rounded-circle" style="width: 30px; height: 30px; background-color: #dfceb3; opacity: 0.6; top: 25%; left: 16%; z-index: 0;"></div>
+            <div class="position-absolute" style="width: 2px; height: 180px; background-color: #dfceb3; transform: rotate(50deg); top: 15%; left: 8%; z-index: 0; opacity: 0.5;"></div>
+            <div class="position-absolute" style="width: 140px; height: 60px; border-radius: 50%; background-color: #b58349; opacity: 0.2; top: 48%; left: 47%; z-index: 0; filter: blur(5px);"></div>
+            <div class="position-absolute" style="width: 180px; height: 1px; background-color: #dfceb3; opacity: 0.6; top: 45%; right: 15%; transform: rotate(-5deg); z-index: 0;"></div>
+            <div class="position-absolute rounded-circle" style="width: 25px; height: 25px; background-color: #dfceb3; opacity: 0.6; bottom: 35%; right: 12%; z-index: 0;"></div>
+
+            <div class="container position-relative z-1">
+                <div class="row align-items-center g-5">
+                    <!-- Left: Cursive Text -->
+                    <div class="col-lg-3 text-center text-lg-start" data-aos="fade-right">
+                        <span class="d-inline-block" style="font-family: 'Great Vibes', cursive; color: #b58349; font-size: 2.8rem; line-height: 1.2;">
+                            Every Event<br>Has a Story,<br>Let's Make Yours<br>Beautiful! <i class="fa-regular fa-heart ms-1" style="font-size: 1.5rem;"></i>
+                        </span>
+                    </div>
+
+                    <!-- Center: Text Content -->
+                    <div class="col-lg-5 text-center text-lg-start px-lg-4" data-aos="fade-up">
+                        <h2 class=" fw-bold mb-4" style="font-family: var(--font-heading); color: var(--secondary-color);">Explore Our Gallery</h2>
+                        <p class="text-secondary mb-4 position-relative z-1" style="font-size: 0.95rem; line-height: 1.7;">
+                            From grand weddings to intimate gatherings, our gallery showcases the creativity, elegance and attention to detail we bring to every event.
+                        </p>
+                        <a href="portfolio.html" class="btn rounded-2 px-4 py-2 fw-medium text-white d-inline-flex align-items-center shadow-sm" style="background-color: var(--primary-color); border: none; font-size: 0.85rem;">
+                            View More Photos &nbsp;<i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
+                        </a>
+                    </div>
+
+                    <!-- Right: Polaroids -->
+                    <div class="col-lg-4 text-center mt-5 mt-lg-0" data-aos="fade-left">
+                        <div class="mb-3">
+                            <i class="fa-solid fa-camera mb-2" style="color: #b58349; font-size: 1.2rem;"></i>
+                            <div style="font-family: 'Great Vibes', cursive; color: #b58349; font-size: 1.8rem; line-height: 1.2;">Real Moments,<br>Real Smiles,<br>Real Stories <i class="fa-regular fa-heart ms-1" style="font-size: 1rem;"></i></div>
+                        </div>
+                        <div class="position-relative mx-auto" style="height: 250px; max-width: 320px;">
+                            <div class="position-absolute bg-white p-2 pb-4 shadow-sm" style="width: 70%; height: 80%; top: 0; left: 0; transform: rotate(-8deg); z-index: 1;">
+                                <img src="./assets/images/img_73.webp" class="w-100 h-100 object-fit-cover" alt="Real Moments">
+                            </div>
+                            <div class="position-absolute bg-white p-2 pb-4 shadow" style="width: 70%; height: 80%; bottom: 0; right: 0; transform: rotate(6deg); z-index: 2;">
+                                <img src="./assets/images/img_74.webp" class="w-100 h-100 object-fit-cover" alt="Real Smiles">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-5" style="background-color: #faf8f5;">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="d-inline-block text-uppercase fw-bold mb-3 px-3 py-1 rounded-pill" style="background-color: #f1e9d8; color: #b58349; letter-spacing: 2px; font-size: 0.75rem;" data-aos="fade-up">CLIENT LOVE</span>
+                    <h2 class=" fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color);" data-aos="fade-up" data-aos-delay="100">Moments Remembered,<br><span style="color: var(--primary-color);">Words Cherished</span></h2>
+                    <p class="text-secondary mx-auto" style="max-width: 650px; font-size: 0.95rem; line-height: 1.6;" data-aos="fade-up" data-aos-delay="200">Hear from couples, corporate hosts, and families whose celebrations we brought to life.</p>
+                </div>
+                
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <!-- Review 1 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card h-100 border-0 rounded-4 p-4 p-xl-5 bg-white shadow-sm d-flex flex-column">
+                            <div class="mb-4" style="color: #ffb300; font-size: 0.85rem;">
+                                <i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.9rem; line-height: 1.8; font-style: italic;">"Events Planner turned our fairy tale dream wedding into absolute reality. The floral mandap and nighttime fairy lights left our guests speechless."</p>
+                            <hr style="border-top: 1px solid #f0f0f0; margin-bottom: 1.5rem; opacity: 1;">
+                            <div class="d-flex align-items-center mt-auto">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 42px; height: 42px; background-color: #f9f2e3; color: var(--secondary-color); font-size: 0.8rem; font-weight: 600;">
+                                    SM
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1" style="color: var(--secondary-color); font-size: 0.85rem;">Sophia & Marcus Vance</h6>
+                                    <span style="color: var(--primary-color); font-size: 0.75rem;">Grand Lake Como Wedding</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card h-100 border-0 rounded-4 p-4 p-xl-5 bg-white shadow-sm d-flex flex-column">
+                            <div class="mb-4" style="color: #ffb300; font-size: 0.85rem;">
+                                <i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.9rem; line-height: 1.8; font-style: italic;">"Flawless execution for our 1,200-attendee Technovate Tech Summit. From staging to lighting and guest flow, their team operated with military precision."</p>
+                            <hr style="border-top: 1px solid #f0f0f0; margin-bottom: 1.5rem; opacity: 1;">
+                            <div class="d-flex align-items-center mt-auto">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 42px; height: 42px; background-color: #f9f2e3; color: var(--secondary-color); font-size: 0.8rem; font-weight: 600;">
+                                    DC
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1" style="color: var(--secondary-color); font-size: 0.85rem;">David Chen</h6>
+                                    <span style="color: var(--primary-color); font-size: 0.75rem;">VP of Brand, Technovate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 3 -->
+                    <div class="col" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card h-100 border-0 rounded-4 p-4 p-xl-5 bg-white shadow-sm d-flex flex-column">
+                            <div class="mb-4" style="color: #ffb300; font-size: 0.85rem;">
+                                <i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>&nbsp;<i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-secondary mb-4 flex-grow-1" style="font-size: 0.9rem; line-height: 1.8; font-style: italic;">"My 30th birthday pastel wonderland was beyond anything I could imagine. Every photo angle was breathtaking and effortlessly captured."</p>
+                            <hr style="border-top: 1px solid #f0f0f0; margin-bottom: 1.5rem; opacity: 1;">
+                            <div class="d-flex align-items-center mt-auto">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 42px; height: 42px; background-color: #f9f2e3; color: var(--secondary-color); font-size: 0.8rem; font-weight: 600;">
+                                    ER
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1" style="color: var(--secondary-color); font-size: 0.85rem;">Elena Rostova</h6>
+                                    <span style="color: var(--primary-color); font-size: 0.75rem;">Private Birthday Gala</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-5" style="background-color: #0b1322;">
+            <div class="container">
+                <div class="row text-center text-white g-5 justify-content-center">
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: rgba(255, 255, 255, 0.08); color: var(--primary-color);">
+                                <i class="fa-solid fa-champagne-glasses" style="font-size: 1rem;"></i>
+                            </div>
+                        </div>
+                        <h2 class=" fw-bold mb-2" style="font-family: var(--font-heading); color: var(--primary-color);">850<sup style="font-size: 0.55em;">+</sup></h2>
+                        <span class="d-block" style="font-size: 0.7rem; letter-spacing: 1px; color: rgba(255,255,255,0.7); font-weight: 600; text-transform: uppercase;">Weddings & Celebrations</span>
+                    </div>
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: rgba(255, 255, 255, 0.08); color: var(--primary-color);">
+                                <i class="fa-regular fa-calendar-check" style="font-size: 1rem;"></i>
+                            </div>
+                        </div>
+                        <h2 class=" fw-bold mb-2" style="font-family: var(--font-heading); color: var(--primary-color);">14<sup style="font-size: 0.55em;">+</sup></h2>
+                        <span class="d-block" style="font-size: 0.7rem; letter-spacing: 1px; color: rgba(255,255,255,0.7); font-weight: 600; text-transform: uppercase;">Years Curating Wonder</span>
+                    </div>
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: rgba(255, 255, 255, 0.08); color: var(--primary-color);">
+                                <i class="fa-regular fa-heart" style="font-size: 1rem;"></i>
+                            </div>
+                        </div>
+                        <h2 class=" fw-bold mb-2" style="font-family: var(--font-heading); color: var(--primary-color);">99.4<sup style="font-size: 0.55em;">%</sup></h2>
+                        <span class="d-block" style="font-size: 0.7rem; letter-spacing: 1px; color: rgba(255,255,255,0.7); font-weight: 600; text-transform: uppercase;">Delight & Satisfaction</span>
+                    </div>
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: rgba(255, 255, 255, 0.08); color: var(--primary-color);">
+                                <i class="fa-solid fa-award" style="font-size: 1rem;"></i>
+                            </div>
+                        </div>
+                        <h2 class=" fw-bold mb-2" style="font-family: var(--font-heading); color: var(--primary-color);">45<sup style="font-size: 0.55em;">+</sup></h2>
+                        <span class="d-block" style="font-size: 0.7rem; letter-spacing: 1px; color: rgba(255,255,255,0.7); font-weight: 600; text-transform: uppercase;">Prestigious Design Awards</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-uppercase fw-bold d-block mb-3" style="color: var(--primary-color); letter-spacing: 2px; font-size: 0.75rem;" data-aos="fade-up">GOT QUESTIONS?</span>
+                    <h2 class=" fw-bold mb-3" style="font-family: var(--font-heading); color: var(--secondary-color);" data-aos="fade-up" data-aos-delay="100">Frequently Asked Questions</h2>
+                    <p class="text-secondary mx-auto" style="max-width: 650px; font-size: 0.95rem; line-height: 1.6;" data-aos="fade-up" data-aos-delay="200">Everything you need to know about our decor, event photography, and planning coverage.</p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-9" data-aos="fade-up" data-aos-delay="100">
+                        <div class="accordion" id="faqAccordionGallery">
+                            <!-- FAQ 1 -->
+                            <div class="mb-3 rounded-3" style="background-color: #fbfaf8; border: none;">
+                                <h2>
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faqg1">
+                                        <span class="fw-semibold pe-3" style="color: var(--secondary-color); font-size: 0.95rem;">Can we customize theme decor and color schemes to our exact vision?</span>
+                                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm" style="width: 25px; height: 25px; color: #b58349;">
+                                            <i class="fa-solid fa-arrow-down" style="font-size: 0.7rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faqg1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordionGallery">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        Absolutely. Every event begins with a bespoke mood board and 3D concept render crafted to align with your personal aesthetic, venue specifications, and budget.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- FAQ 2 -->
+                            <div class="mb-3 rounded-3" style="background-color: #fbfaf8; border: none;">
+                                <h2>
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faqg2">
+                                        <span class="fw-semibold pe-3" style="color: var(--secondary-color); font-size: 0.95rem;">Do your packages include photography and videography?</span>
+                                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm" style="width: 25px; height: 25px; color: #b58349;">
+                                            <i class="fa-solid fa-arrow-up" style="font-size: 0.7rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faqg2" class="accordion-collapse collapse" data-bs-parent="#faqAccordionGallery">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        Yes, we offer comprehensive media packages through our trusted network of top-tier photographers and videographers to capture every moment.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 3 -->
+                            <div class="mb-3 rounded-3" style="background-color: #fbfaf8; border: none;">
+                                <h2>
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faqg3">
+                                        <span class="fw-semibold pe-3" style="color: var(--secondary-color); font-size: 0.95rem;">How far in advance should we reserve our event date?</span>
+                                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm" style="width: 25px; height: 25px; color: #b58349;">
+                                            <i class="fa-solid fa-arrow-up" style="font-size: 0.7rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faqg3" class="accordion-collapse collapse" data-bs-parent="#faqAccordionGallery">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        We recommend reserving your date 6-12 months in advance, especially for peak seasons, to ensure full availability for planning and vendor coordination.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 4 -->
+                            <div class="mb-3 rounded-3" style="background-color: #fbfaf8; border: none;">
+                                <h2>
+                                    <button class="w-100 d-flex justify-content-between align-items-center bg-transparent border-0 p-4 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#faqg4">
+                                        <span class="fw-semibold pe-3" style="color: var(--secondary-color); font-size: 0.95rem;">Do you travel for destination events and weddings worldwide?</span>
+                                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm" style="width: 25px; height: 25px; color: #b58349;">
+                                            <i class="fa-solid fa-arrow-up" style="font-size: 0.7rem;"></i>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="faqg4" class="accordion-collapse collapse" data-bs-parent="#faqAccordionGallery">
+                                    <div class="p-4 pt-0 text-secondary" style="font-size: 0.9rem; line-height: 1.7;">
+                                        Yes, our team is equipped to travel globally. We have successfully executed destination events across multiple countries, handling all international logistics.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="py-5" style="background: linear-gradient(90deg, #081423 0%, #0B1C31 50%, #081423 100%);">
+            <div class="container text-center text-white">
+                <span class="text-uppercase fw-bold d-block mb-3" style="color: var(--primary-color); letter-spacing: 2px; font-size: 0.75rem;" data-aos="fade-up">START YOUR JOURNEY</span>
+                <h2 class=" fw-bold mb-3 text-white" style="font-family: var(--font-heading);" data-aos="fade-up" data-aos-delay="100">Ready to Create Unforgettable Memories?</h2>
+                <p class="mb-5 mx-auto" style="color: rgba(255, 255, 255, 0.7); max-width: 600px; font-size: 0.95rem; line-height: 1.7;" data-aos="fade-up" data-aos-delay="200">Schedule a complimentary 30-minute design consultation with our lead event producers.</p>
+                <div class="d-flex flex-wrap justify-content-center gap-3" data-aos="fade-up" data-aos-delay="300">
+                    <a href="contact.html" class="btn rounded-2 px-4 py-2 fw-medium d-inline-flex align-items-center" style="background-color: var(--primary-color); color: #fff; font-size: 0.9rem; border: 1px solid var(--primary-color);">
+                        <i class="fa-regular fa-calendar-check me-2" style="font-size: 0.85rem;"></i> Book Free Consultation
+                    </a>
+                    <a href="#" class="btn rounded-2 px-4 py-2 fw-medium bg-transparent text-white d-inline-flex align-items-center" style="border: 1px solid rgba(255,255,255,0.3); font-size: 0.9rem;">
+                        <i class="fa-solid fa-arrow-right-long me-2" style="font-size: 0.85rem;"></i> Download Lookbook (PDF)
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer will be injected here via JS -->
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50
+        });
+    </script>
+</body>
+</html>

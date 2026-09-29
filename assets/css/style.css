@@ -1,0 +1,67 @@
+/* =========================================
+   VARIABLES & RESET
+   ========================================= */
+:root {
+    --primary-color: #B9813E;
+    --primary-hover: #b0895c;
+    --secondary-color: #0B111E;
+    --text-color: #4b5563;
+    --heading-color: #111827;
+    --bg-light: #f9fafb;
+    --bg-white: #ffffff;
+    --border-color: #e5e7eb;
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--bg-white);
+    max-width: 100%;
+    overflow-wrap: break-word;
+    overflow-x: clip;
+}
+
+html {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--heading-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+/* buttons */
+.custom-btn-primary {
+    transition: var(--transition);
+}
+.custom-btn-primary:hover {
+    background-color: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+}
+.custom-btn-outline {
+    transition: var(--transition);
+}
+.custom-btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: #ffffff !important;
+}
+
+.site-header { position: sticky; top: 0; z-index: 1030; }
+
