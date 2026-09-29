@@ -46,20 +46,65 @@ a {
     transition: var(--transition);
 }
 
-/* buttons */
+/* =========================================
+   CUSTOM BUTTONS
+   ========================================= */
+.custom-btn-primary, 
+.custom-btn-secondary, 
+.custom-btn-outline {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+
+/* Hover Animation common for all custom buttons */
+.custom-btn-primary:hover, 
+.custom-btn-secondary:hover, 
+.custom-btn-outline:hover {
+    transform: translateY(-4px);
+}
+
+/* Primary Button - Gold */
 .custom-btn-primary {
-    transition: var(--transition);
+    background-color: #c59b6d !important;
+    border-color: #c59b6d !important;
+    color: #ffffff !important;
 }
 .custom-btn-primary:hover {
-    background-color: var(--primary-hover) !important;
-    border-color: var(--primary-hover) !important;
+    background-color: #b0895c !important;
+    border-color: #b0895c !important;
+    box-shadow: 0 8px 15px rgba(197, 155, 109, 0.35) !important;
 }
+
+/* Secondary Button - Dark Navy */
+.custom-btn-secondary {
+    background-color: #0B111E !important;
+    border-color: #0B111E !important;
+    color: #ffffff !important;
+}
+.custom-btn-secondary:hover {
+    background-color: #1a2642 !important;
+    border-color: #1a2642 !important;
+    box-shadow: 0 8px 15px rgba(11, 17, 30, 0.35) !important;
+}
+
+/* Outline Button - Adaptive */
 .custom-btn-outline {
-    transition: var(--transition);
+    background-color: transparent !important;
+    border-color: #0B111E;
+    color: #0B111E;
+}
+.text-white.custom-btn-outline {
+    border-color: #ffffff !important;
+    color: #ffffff !important;
 }
 .custom-btn-outline:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    border-color: #ffffff !important;
+    background-color: #c59b6d !important;
+    border-color: #c59b6d !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 15px rgba(197, 155, 109, 0.25) !important;
 }
 
 .site-header {
