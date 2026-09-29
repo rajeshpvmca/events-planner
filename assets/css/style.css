@@ -23,17 +23,16 @@
     box-sizing: border-box;
 }
 
+body, html {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 body {
     font-family: var(--font-body);
     color: var(--text-color);
     background-color: var(--bg-white);
-    max-width: 100%;
     overflow-wrap: break-word;
-    overflow-x: clip;
-}
-
-html {
-    max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -63,5 +62,22 @@ a {
     border-color: #ffffff !important;
 }
 
-.site-header { position: sticky; top: 0; z-index: 1030; }
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: #ffffff;
+}
+
+/* Push content down so it doesn't hide behind the fixed header */
+body {
+    padding-top: 86px;
+}
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 76px;
+    }
+}
 

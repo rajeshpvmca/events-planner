@@ -1,43 +1,46 @@
 <!-- Bootstrap 5 Header -->
-<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-3">
+<nav class="navbar navbar-expand-xl bg-white shadow-sm py-3">
     <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand" href="index.html">
-            <img src="assets/images/logoStackly.webp" alt="Stackly" height="40">
-        </a>
+        <a class="navbar-brand position-relative" style="z-index: 1060;" href="index.html">
+        <div style="-webkit-mask: url('assets/images/logoStackly.webp') no-repeat center left; -webkit-mask-size: contain; mask: url('assets/images/logoStackly.webp') no-repeat center left; mask-size: contain; background: black; width: 160px; height: 50px;" class="header-logo-mask" aria-label="Stackly Logo"></div>
+    </a>
         
         <!-- Mobile Toggle -->
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler border-0 shadow-none p-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <!-- Navbar Links & Button -->
         <div class="collapse navbar-collapse" id="mainNavbar">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-medium" style="font-family: 'Inter', sans-serif;">
+            <ul class="navbar-nav mx-auto mb-3 mb-xl-0 mt-3 mt-xl-0 fw-medium text-center" style="font-family: 'Inter', sans-serif;">
                 <li class="nav-item mx-2">
-                    <a class="nav-link text-dark" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link text-dark py-2 py-xl-1" aria-current="page" href="index.html">Home</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link text-dark" href="about.html">About Us</a>
+                    <a class="nav-link text-dark py-2 py-xl-1" href="about.html">About Us</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link text-dark" href="services.html">Services</a>
+                    <a class="nav-link text-dark py-2 py-xl-1" href="services.html">Services</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link text-dark" href="events.html">Events</a>
+                    <a class="nav-link text-dark py-2 py-xl-1" href="events.html">Events</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link text-dark" href="gallery.html">Gallery</a>
+                    <a class="nav-link text-dark py-2 py-xl-1" href="gallery.html">Gallery</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link text-dark" href="packages.html">Packages</a>
+                    <a class="nav-link text-dark py-2 py-xl-1" href="packages.html">Packages</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link text-dark" href="contact.html">Contact</a>
+                    <a class="nav-link text-dark py-2 py-xl-1" href="contact.html">Contact</a>
                 </li>
             </ul>
-            <div class="d-flex mt-3 mt-lg-0">
-                <a href="planYourEvent.html" class="btn text-white text-uppercase px-4 py-2 fw-semibold w-100 w-lg-auto" style="background-color: #c59b6d; border-color: #c59b6d; font-family: 'Inter', sans-serif; font-size: 0.9rem; letter-spacing: 0.5px;">Plan Your Event</a>
+            <div class="d-flex gap-2 mt-2 mt-xl-0 flex-column flex-sm-row justify-content-center">
+                <a href="login.html" class="btn btn-outline-dark px-4 py-2 fw-semibold d-inline-flex align-items-center justify-content-center gap-2" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; border: 1px solid #e0e0e0; transition: all 0.3s;" onmouseover="this.style.backgroundColor='#f8f9fa'" onmouseout="this.style.backgroundColor='transparent'">
+                    <i class="fa-regular fa-user"></i> Login
+                </a>
+                <a href="planYourEvent.html" class="btn text-white text-uppercase px-4 py-2 fw-semibold w-100 w-sm-auto text-center" style="background-color: #c59b6d; border-color: #c59b6d; font-family: 'Inter', sans-serif; font-size: 0.9rem; letter-spacing: 0.5px;">Plan Your Event</a>
             </div>
         </div>
     </div>
