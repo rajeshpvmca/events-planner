@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <style>
         :root {
@@ -15,6 +15,7 @@
             --accent-gold: #c59b6d;
             --bg-light: #f8fafc;
             --card-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            --text-muted: #64748b;
         }
         body, html {
             background-color: var(--bg-light);
@@ -22,6 +23,11 @@
             overflow-x: hidden;
             margin: 0;
             padding: 0;
+            max-width: 100vw;
+        }
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-navy);
         }
         .dash-container {
             padding: 24px;
@@ -36,6 +42,7 @@
             padding: 24px;
             margin-bottom: 24px;
             transition: transform 0.3s;
+            height: 100%;
         }
         .card-custom:hover {
             transform: translateY(-2px);
@@ -50,39 +57,51 @@
             font-size: 1.5rem;
             background: rgba(197, 155, 109, 0.1);
             color: var(--accent-gold);
-        }
-        .table-custom th {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #64748b;
-            border-bottom: 2px solid #f1f5f9;
-            padding: 12px 16px;
-        }
-        .table-custom td {
-            padding: 16px;
-            vertical-align: middle;
-            color: #334155;
-            font-size: 0.875rem;
-            border-bottom: 1px solid #f1f5f9;
+            flex-shrink: 0;
         }
         .badge-status {
             padding: 6px 12px;
             border-radius: 50px;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             font-weight: 600;
             display: inline-block;
         }
         .badge-success { background: #dcfce7; color: #166534; }
         .badge-pending { background: #fef9c3; color: #854d0e; }
+        .badge-danger { background: #fee2e2; color: #991b1b; }
+        .badge-info { background: #e0f2fe; color: #075985; }
         .badge-purple { background: #f3e8ff; color: #6b21a8; }
+        
         .text-gold { color: var(--accent-gold); }
         .bg-gold { background-color: var(--accent-gold); color: white; }
-        .custom-btn-primary { background: var(--accent-gold); color: #fff; border: none; font-weight: 500; }
-        .custom-btn-primary:hover { background: #b0895c; color: #fff; }
         
-        @media (max-width: 575.98px) {
-            .dash-container { padding: 16px; }
+        .btn-gold { background: var(--accent-gold); color: #fff; border: none; font-weight: 600; transition: 0.3s; }
+        .btn-gold:hover { background: #b0895c; color: #fff; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(197, 155, 109, 0.3); }
+        .btn-outline-navy { border: 1px solid var(--primary-navy); color: var(--primary-navy); background: transparent; font-weight: 600; transition: 0.3s; }
+        .btn-outline-navy:hover { background: var(--primary-navy); color: #fff; }
+
+        .table-custom { white-space: nowrap; }
+        .table-custom th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); border-bottom: 2px solid #f1f5f9; padding: 16px; }
+        .table-custom td { padding: 16px; vertical-align: middle; color: #334155; font-size: 0.875rem; border-bottom: 1px solid #f1f5f9; }
+
+        /* Scroller for kanban boards or tight areas */
+        .scroller-x { overflow-x: auto; padding-bottom: 10px; }
+        .scroller-x::-webkit-scrollbar { height: 6px; }
+        .scroller-x::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 4px; }
+
+        /* Message UI */
+        .chat-sidebar { border-right: 1px solid #e2e8f0; max-height: 600px; overflow-y: auto; }
+        .chat-main { max-height: 600px; display: flex; flex-direction: column; }
+        .msg-bubble { max-width: 80%; padding: 12px 16px; border-radius: 16px; font-size: 0.9rem; }
+        .msg-sent { background: var(--accent-gold); color: white; border-bottom-right-radius: 4px; margin-left: auto; }
+        .msg-recv { background: #f1f5f9; color: var(--primary-navy); border-bottom-left-radius: 4px; }
+        
+        .avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+        .avatar-lg { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+
+        @media (max-width: 767.98px) {
+            .chat-sidebar { border-right: none; border-bottom: 1px solid #e2e8f0; max-height: 250px; }
+            .dash-container { padding: 16px 12px; }
             .card-custom { padding: 16px; }
         }
     </style>
@@ -90,59 +109,107 @@
 <body>
     <div class="dash-container">
         
-<div class="d-flex justify-content-between align-items-center mb-4">
-    <h4 class="fw-bold mb-0">Planner Dashboard</h4>
-    <button class="btn custom-btn-primary rounded-pill px-4"><i class="fa-solid fa-file-invoice-dollar me-2"></i>Create Invoice</button>
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-4 gap-3">
+    <div>
+        <h4 class="fw-bold mb-1 font-serif">Planner Dashboard</h4>
+        <p class="text-muted small mb-0">Here is a summary of your event planning business.</p>
+    </div>
+    <div class="d-flex gap-2 w-100 w-sm-auto">
+        <button class="btn btn-outline-navy rounded-pill px-4 flex-grow-1 flex-sm-grow-0"><i class="fa-solid fa-file-invoice me-2"></i>Invoice</button>
+        <button class="btn btn-gold rounded-pill px-4 flex-grow-1 flex-sm-grow-0"><i class="fa-solid fa-plus me-2"></i>New Client</button>
+    </div>
 </div>
+
 <div class="row g-4 mb-4">
-    <div class="col-12 col-md-3">
-        <div class="card-custom h-100">
-            <div class="text-muted small fw-semibold mb-2 text-uppercase">Active Projects</div>
-            <h3 class="fw-bold mb-0">12</h3>
+    <div class="col-6 col-lg-3">
+        <div class="card-custom p-3 p-md-4 text-center">
+            <h2 class="fw-bold mb-1 font-serif">12</h2>
+            <div class="text-muted small fw-bold text-uppercase" style="letter-spacing:0.5px;">Active Projects</div>
         </div>
     </div>
-    <div class="col-12 col-md-3">
-        <div class="card-custom h-100">
-            <div class="text-muted small fw-semibold mb-2 text-uppercase">Monthly Revenue</div>
-            <h3 class="fw-bold mb-0">$18,450</h3>
+    <div class="col-6 col-lg-3">
+        <div class="card-custom p-3 p-md-4 text-center" style="background:var(--primary-navy); color:#fff;">
+            <h2 class="fw-bold mb-1 font-serif text-gold">$18.5k</h2>
+            <div class="small fw-bold text-uppercase opacity-75" style="letter-spacing:0.5px;">Monthly Rev.</div>
         </div>
     </div>
-    <div class="col-12 col-md-3">
-        <div class="card-custom h-100">
-            <div class="text-muted small fw-semibold mb-2 text-uppercase">Pending Tasks</div>
-            <h3 class="fw-bold mb-0">24</h3>
+    <div class="col-6 col-lg-3">
+        <div class="card-custom p-3 p-md-4 text-center">
+            <h2 class="fw-bold mb-1 font-serif">24</h2>
+            <div class="text-muted small fw-bold text-uppercase" style="letter-spacing:0.5px;">Pending Tasks</div>
         </div>
     </div>
-    <div class="col-12 col-md-3">
-        <div class="card-custom h-100">
-            <div class="text-muted small fw-semibold mb-2 text-uppercase">New Inquiries</div>
-            <h3 class="fw-bold mb-0 text-gold">5</h3>
+    <div class="col-6 col-lg-3">
+        <div class="card-custom p-3 p-md-4 text-center">
+            <h2 class="fw-bold mb-1 font-serif text-success">+5</h2>
+            <div class="text-muted small fw-bold text-uppercase" style="letter-spacing:0.5px;">New Leads</div>
         </div>
     </div>
 </div>
+
 <div class="row g-4">
+    <!-- Chart Section -->
     <div class="col-12 col-xl-8">
-        <div class="card-custom h-100">
-            <h6 class="fw-bold mb-4">Revenue Analytics (2026)</h6>
-            <div id="chart-revenue"></div>
+        <div class="card-custom">
+            <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
+                <h5 class="fw-bold font-serif mb-0">Revenue Analytics (2026)</h5>
+                <select class="form-select form-select-sm rounded-pill w-auto shadow-none">
+                    <option>Last 6 Months</option>
+                    <option>This Year</option>
+                </select>
+            </div>
+            <div id="chart-revenue" class="w-100" style="min-height: 300px;"></div>
         </div>
     </div>
+
+    <!-- Right Sidebar -->
     <div class="col-12 col-xl-4">
-        <div class="card-custom h-100">
-            <h6 class="fw-bold mb-4">Upcoming Deadlines</h6>
-            <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
-                <div>
-                    <div class="fw-semibold" style="font-size:0.85rem;">Client Meeting - Smith Wedding</div>
-                    <div class="text-muted" style="font-size:0.75rem;">Today, 2:00 PM</div>
+        <div class="card-custom mb-4">
+            <h5 class="fw-bold font-serif mb-4">Upcoming Deadlines</h5>
+            <div class="d-flex flex-column gap-3">
+                <div class="d-flex align-items-center justify-content-between p-3 rounded-3" style="background: #f1f5f9;">
+                    <div>
+                        <div class="fw-bold text-dark" style="font-size:0.85rem;">Client Meeting - Smith Wedding</div>
+                        <div class="text-muted" style="font-size:0.75rem;"><i class="fa-regular fa-clock me-1"></i> Today, 2:00 PM</div>
+                    </div>
+                    <span class="badge-status badge-purple shadow-sm">Urgent</span>
                 </div>
-                <span class="badge-status badge-purple">Urgent</span>
+                <div class="d-flex align-items-center justify-content-between p-3 rounded-3 border">
+                    <div>
+                        <div class="fw-bold text-dark" style="font-size:0.85rem;">Venue Deposit - Tech Gala</div>
+                        <div class="text-muted" style="font-size:0.75rem;"><i class="fa-regular fa-clock me-1"></i> Tomorrow, 10:00 AM</div>
+                    </div>
+                    <span class="badge-status badge-pending">Pending</span>
+                </div>
+                <div class="d-flex align-items-center justify-content-between p-3 rounded-3 border">
+                    <div>
+                        <div class="fw-bold text-dark" style="font-size:0.85rem;">Send Catering Quotes</div>
+                        <div class="text-muted" style="font-size:0.75rem;"><i class="fa-regular fa-clock me-1"></i> Nov 02, 2026</div>
+                    </div>
+                    <span class="badge-status badge-info">To-Do</span>
+                </div>
             </div>
-            <div class="d-flex align-items-center justify-content-between">
-                <div>
-                    <div class="fw-semibold" style="font-size:0.85rem;">Venue Deposit - Gala</div>
-                    <div class="text-muted" style="font-size:0.75rem;">Tomorrow, 10:00 AM</div>
+        </div>
+
+        <div class="card-custom">
+            <h5 class="fw-bold font-serif mb-3">Recent Clients</h5>
+            <div class="d-flex flex-column gap-3">
+                <div class="d-flex align-items-center gap-3">
+                    <img src="../assets/images/img_42.webp" class="avatar" alt="Client">
+                    <div class="flex-grow-1">
+                        <div class="fw-bold" style="font-size:0.85rem;">Sarah Johnson</div>
+                        <div class="text-muted" style="font-size:0.75rem;">Wedding Project</div>
+                    </div>
+                    <button class="btn btn-sm btn-light rounded-circle"><i class="fa-solid fa-envelope"></i></button>
                 </div>
-                <span class="badge-status badge-pending">Pending</span>
+                <div class="d-flex align-items-center gap-3">
+                    <img src="../assets/images/img_48.webp" class="avatar" alt="Client">
+                    <div class="flex-grow-1">
+                        <div class="fw-bold" style="font-size:0.85rem;">Marcus Vance</div>
+                        <div class="text-muted" style="font-size:0.75rem;">Tech Retreat</div>
+                    </div>
+                    <button class="btn btn-sm btn-light rounded-circle"><i class="fa-solid fa-envelope"></i></button>
+                </div>
             </div>
         </div>
     </div>
@@ -150,18 +217,33 @@
 
     </div>
     
+    
 <script>
     var options = {
-        series: [{ name: 'Revenue', data: [12000, 15000, 11000, 18450, 16000, 22000] }],
-        chart: { type: 'area', height: 300, toolbar: { show: false }, fontFamily: 'Inter' },
+        series: [{ name: 'Revenue', data: [12000, 15000, 11000, 18500, 16000, 22000] }],
+        chart: { type: 'area', height: 320, toolbar: { show: false }, fontFamily: 'Inter' },
         colors: ['#c59b6d'],
-        fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.4, opacityTo: 0, stops: [0, 90, 100] } },
+        fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0.05, stops: [0, 90, 100] } },
         dataLabels: { enabled: false },
-        stroke: { curve: 'smooth', width: 2 },
-        xaxis: { categories: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'] }
+        stroke: { curve: 'smooth', width: 3 },
+        xaxis: { categories: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'] },
+        yaxis: { labels: { formatter: function(val) { return "$" + val } } }
     };
-    new ApexCharts(document.querySelector('#chart-revenue'), options).render();
+    new ApexCharts(document.querySelector("#chart-revenue"), options).render();
 </script>
 
+
+    <!-- 404 Redirection Script for ALL interactables -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const interactables = document.querySelectorAll('a, button');
+            interactables.forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.top.location.href = '../404.html';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
