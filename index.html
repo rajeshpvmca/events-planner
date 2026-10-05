@@ -19,6 +19,14 @@
 </head>
 <body>
 
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+
     <!-- Header will be injected here via JS -->
     <header id="site-header" class="site-header"></header>
 
@@ -1044,11 +1052,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     
-    <script>
-        AOS.init({
-            once: true,
-            offset: 50
-        });
-    </script>
+    <!-- AOS init moved to main.js for preloader sync -->
 </body>
 </html>

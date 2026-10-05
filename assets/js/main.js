@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
+// --- Preloader & AOS Logic ---
+// Prevent scrolling during preloader
+document.body.style.overflow = 'hidden';
+
+// Remove preloader after 2 seconds and init AOS
+setTimeout(() => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('fade-out');
+    }
+    
+    // Restore scrolling
+    document.body.style.overflow = '';
+    
+    // Initialize AOS only AFTER preloader is done
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800
+        });
+    }
+}, 2000);
+// -----------------------------
+
     
 
         // Load Header
